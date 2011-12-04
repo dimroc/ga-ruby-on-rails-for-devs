@@ -9,7 +9,10 @@ Curriculum
 Week One: "Hello World" in Ruby and Ruby-on-Rails 
 -------------------------------------------------
 
-* Ruby on Rails Setup, IDEs
+* [curriculum_RubyForDevs/tree/master/class/1-hello-world.md](Ruby on Rails Setup, IDEs)
+** [curriculum_RubyForDevs/tree/master/class/0-happiness.md](Why Ruby?)
+** [curriculum_RubyForDevs/tree/master/class/1-github-account.md](Github)
+** Development Environment on [curriculum_RubyForDevs/tree/master/class/2-development-environment-linux.md](Linux), [curriculum_RubyForDevs/tree/master/class/2-development-environment-osx.md](Mac) or [curriculum_RubyForDevs/tree/master/class/2-development-environment-windows.md](Windows)
 * Introduction to GIT with Github and Developer Workflow
 * Basic Language Concepts, Rails Console and Rake
 * MVC basics with Ruby-on-Rails

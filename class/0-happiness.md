@@ -17,8 +17,8 @@ Your instructors are:
 
 We have converted from other programming languages to Ruby in the past few years and have never looked back. Lets get started.
 
-* [1-development-environment-linux](Setting up a Development Environment - Linux)
-* [1-development-environment-osx](Setting up a Development Environment - OSX)
-* [1-development-environment-windows](Setting up a Development Environment - Windows)
+Next
+====
 
+[Get a Github Account](1-github-account.md)
 

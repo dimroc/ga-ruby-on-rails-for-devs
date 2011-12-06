@@ -37,4 +37,8 @@ Installing Ruby Development Kit
 	
 Install the Ruby Development Kit. This allows you to install various bundles with native extensions. Download it from [here](http://rubyinstaller.org/downloads/) and extract it into a new folder. Run `devkitvars.bat` to setup an environment. 
 
+Next
+====
+
+[Introduction to GIT with Github and Developer Workflow](3-git-workflow.md)
 

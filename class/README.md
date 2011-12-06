@@ -6,12 +6,12 @@ Week One: "Hello World" in Ruby and Ruby-on-Rails
 
 * Ruby on Rails Setup, IDEs
   * [Why Ruby?](0-happiness.md)
-  * [Github](1-github-account.md)
-  * Development Environment on 
+  * [Introduction to Github](1-github-account.md)
+  * Setup a Development Environment on 
     [Linux](2-development-environment-linux.md), 
-    [Mac](2-development-environment-osx.md) or 
+    [Mac](2-development-environment-osx.md) and 
     [Windows](2-development-environment-windows.md)
-* Introduction to GIT with Github and Developer Workflow
+* [Introduction to GIT with Github and Developer Workflow](3-git-workflow.md)
 * Basic Language Concepts, Rails Console and Rake
 * MVC basics with Ruby-on-Rails
 

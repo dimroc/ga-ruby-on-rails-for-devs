@@ -11,5 +11,8 @@ Create an Account
 
 Create a free account on [Github](https://github.com/signup/free) if you don't have one.
 
+Next
+====
 
+Setup a Development Environment on [Linux](2-development-environment-linux.md), [Mac](2-development-environment-osx.md) or [Windows](2-development-environment-windows.md).
 

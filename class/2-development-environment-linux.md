@@ -83,3 +83,9 @@ Test Ruby
 
 This should output "Hello".
 
+Next
+====
+
+[Introduction to GIT with Github and Developer Workflow](3-git-workflow.md)
+
+

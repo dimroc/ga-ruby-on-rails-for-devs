@@ -6,7 +6,7 @@ Week One: "Hello World" in Ruby and Ruby-on-Rails
 
 * Ruby on Rails Setup, IDEs
   * [Why Ruby?](0-happiness.md)
-  * [Introduction to Github](1-github-account.md)
+  * [Create a Github Account](1-github-account.md)
   * Setup a Development Environment on 
     [Linux](2-development-environment-linux.md), 
     [Mac](2-development-environment-osx.md) and 

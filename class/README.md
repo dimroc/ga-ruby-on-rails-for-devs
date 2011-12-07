@@ -14,7 +14,9 @@ Week One: "Hello World" in Ruby and Ruby-on-Rails
 * [Git via Github and Dev Workflow](3-git-workflow.md)
 * [Basic Language Concepts](4-ruby-basics.md)
 * [Ruby OOP, Exceptions and Mixins](5-ruby-oop.md)
-* MVC basics with Ruby-on-Rails
+* [Introduction to Rack](6-rack-basics.md)
+* [Introduction to Rails](7-rails-basics.md)
+* Rails MVC Basics
 
 Week Two: "A Ruby-on-Rails Application in Production
 ----------------------------------------------------

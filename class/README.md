@@ -4,15 +4,16 @@ Class Curriculum
 Week One: "Hello World" in Ruby and Ruby-on-Rails 
 -------------------------------------------------
 
-* Ruby on Rails Setup, IDEs
+* Ruby on Rails Setup
   * [Why Ruby?](0-happiness.md)
   * [Create a Github Account](1-github-account.md)
   * Setup a Development Environment on 
     [Linux](2-development-environment-linux.md), 
     [Mac](2-development-environment-osx.md) and 
     [Windows](2-development-environment-windows.md)
-* [Introduction to GIT with Github and Developer Workflow](3-git-workflow.md)
-* Basic Language Concepts, Rails Console and Rake
+* [Git via Github and Dev Workflow](3-git-workflow.md)
+* [Basic Language Concepts](4-ruby-basics.md)
+* [Ruby OOP, Exceptions and Mixins](5-ruby-oop.md)
 * MVC basics with Ruby-on-Rails
 
 Week Two: "A Ruby-on-Rails Application in Production

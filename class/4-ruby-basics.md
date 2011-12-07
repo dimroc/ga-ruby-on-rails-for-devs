@@ -43,6 +43,10 @@ Operations with a bang (!) have consequences, ie. are performed in-place.
     puts s.downcase! # "hello world"
     puts s # "Hello World"
 
+Regular expressions are built-in.
+
+    puts "Hello World" =~ /World/
+
 Loops
 -----
 
@@ -137,7 +141,12 @@ Mapping
 
 Applies a block to each element and returns a new collection.
 
-    puts [1, 2].map{ |i| i * 2 } # 2, 4
+    puts [ 1, 2 ].map{ |i| i * 2 } # 2, 4
+
+Injecting
+---------
+
+  [ 1, 2, 3, 4 ].inject(0) { |result, element| result + element } # => 10
 
 Chaining
 -------
@@ -146,5 +155,8 @@ Objects can be `tap`'ed.
 
     1.tap{ |i| puts i }.tap { |i| puts i * 2 } # 1, 2
 
+Why the Magic?
+--------------
 
+Ruby is written in C. Most of the collection operations are implemented with low level constructs and are very fast.
 

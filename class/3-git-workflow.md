@@ -76,6 +76,10 @@ Next time you can push all pending changes on all branches.
 
     ga/red$ git push
 
+The opposite of *pushing* is *pulling*. The following updates the local copy to the remote changes on the *master* branch.
+
+    ga/red$ git pull origin master 
+
 Cloning
 -------
 
@@ -85,15 +89,20 @@ Use `git clone` to get a copy of an existing Github repository to your local mac
 
 This creates a new folder called *green* with the contents of the *red* repository.
 
-Pulling
--------
-
-To update the local repository to the changes in the remote repository, use *git pull*.
-
 Topical Branches
 ----------------
 
-Unlike other source controls, branches are cheap. You almost never work on the *master* branch. Instead, create a topical branch. 
+Unlike other source controls, branches are cheap. In Git it's considered a good practice to never work on the *master* branch and create *topical branches* instead. A topical branch is created off master.
+
+First, switch to the *master* branch.
+
+    ga/red$ git checkout master
+
+Ensure the *master* branch is up-to-date.
+
+    ga/red$ git pull origin master 
+
+Create a new branch *readme-changes*.
 
     ga/red$ git checkout -b readme-changes
     Switched to a new branch 'readme-changes'
@@ -102,9 +111,14 @@ Unlike other source controls, branches are cheap. You almost never work on the *
     # On branch readme-changes
     nothing to commit (working directory clean)
 
-After you make commits on a branch, push them to Github.
+Make some changes on the branch, commit them and push them to Github.
 
     ga/red$ git push origin readme-changes
+
+When the feature on a branch is ready, merge it to *master*.
+
+    ga/red$ git checkout master
+    ga/red$ git merge readme-changes
 
 Exercise
 --------
@@ -114,7 +128,7 @@ Make a change to README in your local *red* repository in a new branch, *push* i
 Forking
 -------
 
-To contribute to someone else's work, create a new *fork*, then clone your fork to your local environment. To submit changes, make *pull requests*.
+To contribute to someone else's work, create a new *fork* via Github, then clone your fork to your local environment. To submit changes, make *pull requests*.
 
 Exercise
 --------
@@ -124,11 +138,10 @@ In pairs, fork each-other's repositories, clone your fork, make a change to *REA
 Next
 ====
 
-* [Ruby Basics](4-ruby-basics.md)
+We know enough about Git to be dangerous, next are [Ruby Basics](4-ruby-basics.md).
 
 Links
 -----
 
 * [Learn Git](http://learn.github.com/p/intro.html)
-
 

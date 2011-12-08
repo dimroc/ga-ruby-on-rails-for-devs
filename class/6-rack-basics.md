@@ -4,7 +4,7 @@ Rack Basics
 Bundler
 -------
 
-Bundler is a package manager that sandboxes an application or library. Libraries are organized in *gems*. 
+Bundler is a package manager that sandboxes an application or library. Libraries are called *gems*. 
 
 Create a *Gemfile* that requires Rack and Mongrel, a web server.
 
@@ -45,3 +45,4 @@ It can be run with ruby.
     $ ruby server.rb
 
 Navigate to [localhost:9292](http://localhost:9292/).
+

@@ -12,7 +12,7 @@ An application can then be run.
 
     $ cd hello-world
     hello-world$ rails s
-    
+
     => Booting WEBrick
     => Rails 3.1.0 application starting in development on http://0.0.0.0:3000
     => Call with -d to detach
@@ -40,7 +40,7 @@ Install gems.
 
     $ bundle install
     Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
-    
+
     $ rails --version
     Rails 3.1.0
 
@@ -73,7 +73,7 @@ At boot we just need to setup bundler.
 
     # require rubygems that knows how to load gems
     require 'rubygems'
-    
+
     # Assign to BUNDLE_GEMFILE the full path of Gemfile
     ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../../Gemfile', __FILE__)
 
@@ -83,7 +83,7 @@ At boot we just need to setup bundler.
 Config.ru
 ---------
 
-Rails uses Rack since 2.3 as the basis for its HTTP handling.
+Rails uses Rack as the basis for its HTTP handling.
 
 Config.ru is a convention by which we indicate how to run a Rack-based application.
 
@@ -96,7 +96,7 @@ Load Sequence
 -------------
 
     $ rails s
-    
+
     Loading script/rails
     Loading config/boot.rb
     Loading rails/commands

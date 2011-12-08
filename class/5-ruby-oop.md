@@ -62,7 +62,7 @@ You can mix instance methods into another class with `include`.
     class Number
       include Incrementable
       include Decrementable  
-      
+
       attr_reader :value
 
       def initialize(value)
@@ -72,7 +72,7 @@ You can mix instance methods into another class with `include`.
       def to_i
         @value.to_i
       end
-    
+
     end
 
     n = Number.new(5)
@@ -82,7 +82,7 @@ You can mix instance methods into another class with `include`.
 Monkey Patching
 ---------------
 
-Methods, classes, variables and everything else is defined when it's loaded.
+Methods, classes, variables and everything else is defined when it's loaded. You can *monkey-patch* any classin Ruby.
 
     class Number
       def to_i
@@ -98,13 +98,14 @@ With great power comes great responsibility.
 Reflection
 ----------
 
-Reflection is built-in and methods can and are often defined at runtime.
+Reflection is built-in and methods can and are often defined at runtime. You can either monkey-patch a class or even open it and work around any privacy declarations.
 
     Color.methods
     Color.new.methods
-    
+
     # Color.define_method :shine, lambda { "shiny #{name}" } - illegal, define_method is private
     Color.send(:define_method, :shine, lambda { "shiny #{name}" })
     puts Color.new("red").shine # shiny red
 
     Color.new.is_a?(Color) # true
+

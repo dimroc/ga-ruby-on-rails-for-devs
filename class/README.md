@@ -1,7 +1,7 @@
 Class Curriculum
 ================
 
-Week One: "Hello World" in Ruby and Ruby-on-Rails 
+Week One: "Hello World" in Ruby and Ruby-on-Rails
 -------------------------------------------------
 
 * Ruby on Rails Setup
@@ -16,7 +16,7 @@ Week One: "Hello World" in Ruby and Ruby-on-Rails
 * [Ruby OOP, Exceptions and Mixins](5-ruby-oop.md)
 * [Introduction to Rack](6-rack-basics.md)
 * [Introduction to Rails](7-rails-basics.md)
-* Rails MVC Basics
+* [Live Rails MVC Application](8-rails-mvc.md)
 
 Week Two: "A Ruby-on-Rails Application in Production
 ----------------------------------------------------
@@ -53,5 +53,4 @@ Week Six: "Refactoring a Ruby-on-Rails Application
 * Introduction to Ruby DSLs
 * Building a production-grade RESTful API
 * Getting things done with community GEMs
-
 

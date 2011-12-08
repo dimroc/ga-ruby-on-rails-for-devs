@@ -155,8 +155,4 @@ Objects can be `tap`'ed.
 
     1.tap{ |i| puts i }.tap { |i| puts i * 2 } # 1, 2
 
-Why the Magic?
---------------
-
-Ruby is written in C. Most of the collection operations are implemented with low level constructs and are very fast.
 

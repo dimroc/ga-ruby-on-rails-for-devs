@@ -83,6 +83,13 @@ Test Ruby
 
 This should output "Hello".
 
+PostgreSQL
+----------
+
+We'll use PostgreSQL with our Rails application.
+
+  sudo apt-get install postgresql 
+
 Next
 ====
 

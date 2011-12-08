@@ -78,6 +78,11 @@ Homebrew is a package manager we'll use for a few components.
 
 See [installation instructions](https://github.com/mxcl/homebrew/wiki/installation) for any issues.
 
+PostgreSQL
+----------
+
+We'll use PostgreSQL with our Rails application. Download and install from [here](http://www.postgresql.org/download/).
+
 Next
 ====
 

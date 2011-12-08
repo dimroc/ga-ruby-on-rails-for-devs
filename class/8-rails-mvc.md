@@ -42,17 +42,61 @@ Asserts come from [ActionDispatch::Assertions](http://apidock.com/rails/ActionDi
 
 Run tests with `rake test`.
 
+Switch from SQLLite to PostgreSQL
+---------------------------------
+
+Heroku doesn't support SQLLite. Lets switch to PostgreSQL.
+
+    (as postgres admin user)
+    psql template1  
+
+    create role myapp with createdb login password 'myapp';  // 'login' is optional if you plan to use psql
+
+Change `sqlite` to `pg` in `Gemfile` and run `bundle install`.
+
+Edit `config/database.yml`.
+
+    common: &common
+      adapter: postgresql
+      username: rails
+      password: password
+
+    development:
+      <<: *common
+      database: rails_development
+
+    test:
+      <<: *common
+      database: rails_test
+
+    production:
+      <<: *common
+      database: rails_production
+
+Create the databases.
+
+    rake db:create:all
+
+Assets
+------
+
+In Rails assets are precompiled.
+
+    RAILS_ENV=production rake assets:precompile
+    git add public/assets
+    git commit -m "vendor compiled assets"
+
 Deploy to Heroku
 ----------------
 
 Heroku provides hosting for Rails applications and GIT-based workflow for deployment. Create an account on [heroku.com](http://www.heroku.com/).
 
-    $ gem install heroku
-    $ heroku keys:add
+    gem install heroku
+    heroku keys:add
 
 Create an application.
 
-    $ heroku create dblock-rails-mvc
+    $ heroku create dblock-rails-mvc --stack cedar
     Creating dblock-rails-mvc... done, stack is bamboo-mri-1.9.2
     http://dblock-rails-mvc.heroku.com/ | git@heroku.com:dblock-rails-mvc.git
 
@@ -66,3 +110,9 @@ Push the application to Heroku.
 
 Open a browser, `heroku open`.
 
+Scaffold Domain Model
+---------------------
+
+    rails generate scaffold Thing name:string description:string
+    
+This creates a model, controller, views, a database migration script, udpates the schema and writes basic tests.

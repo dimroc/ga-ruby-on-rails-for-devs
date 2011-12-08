@@ -37,6 +37,11 @@ Installing Ruby Development Kit
 	
 Install the Ruby Development Kit. This allows you to install various bundles with native extensions. Download it from [here](http://rubyinstaller.org/downloads/) and extract it into a new folder. Run `devkitvars.bat` to setup an environment. 
 
+PostgreSQL
+----------
+
+We'll use PostgreSQL with our Rails application. Install from [here](http://www.postgresql.org/download/windows/).
+
 Next
 ====
 

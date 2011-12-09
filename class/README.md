@@ -16,7 +16,8 @@ Week One: "Hello World" in Ruby and Ruby-on-Rails
 * [Ruby OOP, Exceptions and Mixins](5-ruby-oop.md)
 * [Introduction to Rack](6-rack-basics.md)
 * [Introduction to Rails](7-rails-basics.md)
-* [Live Rails MVC Application](8-rails-mvc.md)
+* [Live Rails MVC Application using Scaffold](8-rails-mvc-scaffold.md)
+* [Live Rails MVC Application from Scratch](8-rails-mvc-dev.md)
 
 Week Two: "A Ruby-on-Rails Application in Production
 ----------------------------------------------------

@@ -1,5 +1,5 @@
-Live Rails MVC Application
-==========================
+Live Rails Scaffold MVC Application
+===================================
 
 Rails Scaffold
 --------------
@@ -42,17 +42,18 @@ Asserts come from [ActionDispatch::Assertions](http://apidock.com/rails/ActionDi
 
 Run tests with `rake test`.
 
-Switch from SQLLite to PostgreSQL
----------------------------------
+Switch from SQL-Lite to PostgreSQL
+----------------------------------
 
 Heroku doesn't support SQLLite. Lets switch to PostgreSQL.
 
-    (as postgres admin user)
-    psql template1  
-
-    create role myapp with createdb login password 'myapp';  // 'login' is optional if you plan to use psql
-
 Change `sqlite` to `pg` in `Gemfile` and run `bundle install`.
+
+Create a login role.
+
+    $ psql template1  
+
+    create role rails with createdb login password 'password';
 
 Edit `config/database.yml`.
 
@@ -114,5 +115,6 @@ Scaffold Domain Model
 ---------------------
 
     rails generate scaffold Thing name:string description:string
-    
+
 This creates a model, controller, views, a database migration script, udpates the schema and writes basic tests.
+

@@ -86,9 +86,7 @@ This should output "Hello".
 PostgreSQL
 ----------
 
-We'll use PostgreSQL with our Rails application.
-
-  sudo apt-get install postgresql 
+We'll use PostgreSQL with our Rails application. Download and install from [here](http://www.enterprisedb.com/products-services-training/pgdownload).
 
 Next
 ====

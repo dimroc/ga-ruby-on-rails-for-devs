@@ -48,7 +48,7 @@ Build Essentials
 
 You'll need a working C compiler along with several other packages.
 
-    sudo apt-get install build-essential bison openssl libreadline5 libreadline-dev curl git-core zlib1g zlib1g-dev libssl-dev libreadline-dev libxml2-dev autoconf libxslt-dev
+    sudo apt-get install build-essential bison openssl libreadline5 libreadline-dev curl git-core zlib1g zlib1g-dev libssl-dev libreadline-dev libxml2-dev autoconf libxslt-dev libpq5 libpq-dev
 
 Install Ruby w/ RVM
 -------------------

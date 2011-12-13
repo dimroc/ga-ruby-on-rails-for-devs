@@ -1,10 +1,7 @@
 Rails Basics
 ============
 
-Rails Scaffold
---------------
-
-Rails scaffold can generate a working rails application in a single command.
+Rails can generate a working rails application in a single command.
 
     $ rails new hello-world
 
@@ -113,4 +110,9 @@ Load Sequence
     [2011-12-07 17:24:35] INFO  WEBrick 1.3.1
     [2011-12-07 17:24:35] INFO  ruby 1.9.2 (2011-07-09) [x86_64-darwin11.2.0]
     [2011-12-07 17:24:35] INFO  WEBrick::HTTPServer#start: pid=20322 port=3000
+
+Next
+====
+
+Lets look at a [Rails MVC application](8-rails-mvc-scaffold.md).
 

@@ -1,10 +1,7 @@
-Live Rails Scaffold MVC Application
-===================================
+Live Rails MVC Application and Scaffold
+=======================================
 
-Rails Scaffold
---------------
-
-Rails scaffold can generate a working rails application in a single command.
+Rails can generate a working rails application in a single command.
 
     $ rails new rails-basics
 
@@ -117,4 +114,9 @@ Scaffold Domain Model
     rails generate scaffold Thing name:string description:string
 
 This creates a model, controller, views, a database migration script, udpates the schema and writes basic tests.
+
+Next
+====
+
+Lets rebuild a [Rails MVC application from scratch](9-rails-mvc-dev.md).
 

@@ -41,7 +41,7 @@ Manipulating objects, in general, returns copies.
 Operations with a bang (!) have consequences, ie. are performed in-place.
 
     puts s.downcase! # "hello world"
-    puts s # "Hello World"
+    puts s # "hello world"
 
 Regular expressions are built-in.
 
@@ -109,6 +109,14 @@ Arrays are indexed from both ends and it's legal to access an object outside of 
     puts numbers[5] # nil, converted to an empty string
     puts numbers[5].class # NilClass
 
+Nil entries are also objects.
+
+    puts [ 1, nil, 3, 5 ].compact # [ 1, 3, 5]
+
+Nested arrays can be flattenned.
+
+    puts [ [ 1, 2 ], [ 3 ], [], 4 ].flatten # [ 1, 2, 3, 4 ]
+
 Hashes
 ------
 
@@ -118,6 +126,10 @@ Also known as a *dictionary*.
       "red" => "rouge",
       "yellow" => "jaune"
     }
+
+    hash.each do |entry|
+      puts "#{entry[0]} (#{entry[0].class}): #{entry[1][:french]}"
+    end
 
     hash.each_pair do |name, value|
       puts "#{name}: #{value}"
@@ -143,6 +155,8 @@ Applies a block to each element and returns a new collection.
 
     puts [ 1, 2 ].map{ |i| i * 2 } # 2, 4
 
+    puts [ 1, nil, 3, 5 ].map { |i| i.nil? } # false, true, false, false
+
 Injecting
 ---------
 
@@ -155,4 +169,8 @@ Objects can be `tap`'ed.
 
     1.tap{ |i| puts i }.tap { |i| puts i * 2 } # 1, 2
 
+Next
+====
+
+Lets look at [Ruby OOP](5-ruby-oop.md).
 

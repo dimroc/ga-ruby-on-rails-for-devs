@@ -16,7 +16,7 @@ Start with the skeleton built in [a previous lesson](7-rails-basics.md).
 Rakefile
 --------
 
-Tasks, such as database migrations, are written in [Rake](https://github.com/jimweirich/rake). Rake needs a `Rakefile`.
+Tasks, such as database migrations, are written in [Rake](https://github.com/jimweirich/rake). Rake needs a `Rakefile`, which imports the application's code. Therefore, you have access to all domain models in Rake tasks.
 
     require File.expand_path('../config/application', __FILE__)
 
@@ -26,10 +26,21 @@ Tasks, such as database migrations, are written in [Rake](https://github.com/jim
 
 You can run `rake -T` to see available tasks.
 
+    $ rake -T
+    rake about # List versions of all Rails frameworks and the environment
+    ...
+
 Asset Pipeline
 --------------
 
-There're many templating languages that can be used with Rails. ERB is the default. Lets add an application layout in HAML instead. Add `haml-rails` to Gemfile and `app/views/layouts/application.html.haml`.
+The *asset pipeline* enables authoring javascript, CSS and other static artifacts in many ways and compile or package them for the application. For example, in Rails 3.1 the asset pipeline enabled developers to write CoffeeScript instead of raw JavaScript out of the box.
+
+Enable the application pipeline in `config/application.rb`.
+
+    # Enable the asset pipeline
+    config.assets.enabled = true
+
+HTML in Rails is rendered with *templates*. Templates execute Ruby code. There're many templating languages that can be used with Rails. *ERB* is the default. Lets add an application layout in *HAML*, a less terse templating language. Add `haml-rails` to Gemfile and `app/views/layouts/application.html.haml`. The latter is a *layout* - a top-level template that defines the page structure, includes stylesheets and javascripts.
 
     !!!
     %html
@@ -42,23 +53,29 @@ There're many templating languages that can be used with Rails. ERB is the defau
       %body
         = yield
 
-For the stylesheet and javascript links to work, enable the application pipeline in `config/application.rb`.
+Note `stylesheet_link_tag` and `javascript_include_tag`. Those come from [ActionView::Helpers::AssetTagHelper](http://api.rubyonrails.org/classes/ActionView/Helpers/AssetTagHelper.html), which is the tip of the *asset pipeline*. While you can hardcode links in your templates, these functions work with the asset pipeline's concepts and let you add global settings, such as *asset host* for assets hosted externally on a CDN.
 
-    # Enable the asset pipeline
-    config.assets.enabled = true
-
-Enable post-backs with JQuery by adding `jquery-rails` to Gemfile and by including JQuery in `app/assets/javascripts/application.js`.
+Rails now ships with JQuery, which enables data-driven postbacks. Add `jquery-rails` to Gemfile and include JQuery in `app/assets/javascripts/application.js`.
 
     //= require jquery
     //= require jquery_ujs
     //= require_tree .
 
-Add a stylesheet to `app/assets/stylesheets/application.css.scss`.
+Add a stylesheet to `app/assets/stylesheets/application.css.scss`. The stylesheet is authored in SASS, which is anextension of CSS that allows you to use variables, nested rules, mixins, inline imports, etc.
+
+    #error_explanation {
+      background-color: #f0f0f0;
+      h2 {
+        background-color: #c00;
+        color: #fff; }
+      ul li {
+        font-size: 12px;
+        list-style: square; } }
 
 Database Configuration
 ----------------------
 
-The configuration file for the database is authored in *YAML*, `config/database.yml`.
+Rails configuration files are authored in *YAML*, `config/database.yml`. You can reuse blocks of configuration and write Ruby code almost anywhere in the configuration file.
 
     common: &common
       adapter: postgresql
@@ -83,12 +100,12 @@ If you run `rake -T` you'll notice that there're no database tasks. That's becau
 
     require 'rails/all'
 
-Re-run `rake -T`.
+Re-run `rake -T` and make sure that database tasks are now listed.
 
 Database Migrations
 -------------------
 
-Since we're building a database-backed application, we need a schema. We could create `db/schema.rb` and populate it with a schema, but the Rails way is to use *database migrations* as it supports both creating a new database and upgrading an existing one.
+A database-backed application needs a schema. We could create `db/schema.rb` and populate it with a schema, but the Rails way is to use *database migrations*. Migrations support creating a new database and upgrading an existing one with built-in database versioning.
 
 Create `db/migrate/1_create_things.rb`.
 
@@ -105,14 +122,14 @@ Create `db/migrate/1_create_things.rb`.
 Gemfile
 -------
 
-Finally, we need a Postgresql driver in `Gemfile`.
+Add a PostgreSQL driver in `Gemfile`.
 
     gem "pg"
 
 Local Database
 --------------
 
-We're ready to create the database.
+Create a database and migrate it from empty to version 1.
 
     rake db:create
     rake db:migrate
@@ -132,6 +149,8 @@ The validators are a way to ensure presence and uniqueness of fields. The fields
 Application Controller
 ----------------------
 
+All controllers inherit from `ActionController::Base`. It's a good idea to create an `ApplicationController` that can implement common logic, such as authentication, in the future.
+
     class ApplicationController < ActionController::Base
     end
 
@@ -141,25 +160,29 @@ Things Controller
     class ThingsController < ApplicationController
     end
 
-Retrieving all things.
+Retrieving all things for the index.
 
     def index
       @things = Thing.all
     end
 
-Retrieve an existing thing by parameter.
+Retrieve an existing thing by parameter when showing or editing a thing. The `params` hash has entries that can be accessed both by string and by symbol.
 
     def show
       @thing = Thing.find(params[:id])
     end
 
-Create a new thing.
+    def show
+      @thing = Thing.find(params[:id])
+    end
+
+Create a new thing when clicking on new.
 
     def new
       @thing = Thing.new
     end
 
-Persist a new or update an existing thing.
+Persist a new or update an existing thing when submitting a thing from a new or edit page.
 
     def create
       @thing = Thing.new(params[:thing])
@@ -179,6 +202,15 @@ Persist a new or update an existing thing.
       end
     end
 
+Errors are stored automatically via the model being saved, the controller's job is to re-render the view corresponding to the failed action. Create a partial `views/shared/_error_msg.html.haml` that will display errors.
+
+    - if model.errors.any?
+      .error_explanation
+        %h3= "#{pluralize(model.errors.count, "error")} saving #{model.class}:"
+        %ul
+          - model.errors.full_messages.each do |msg|
+            %li= msg
+
 Things View
 -----------
 
@@ -194,21 +226,12 @@ Add `app/views/things/index.html.haml`.
       - @things.each do |thing|
         = thing.name
 
-We can use `simple_form` to make an edit form partial.
+Rather than hardcoding an entire form, lets use `simple_form` and make an edit form partial.
 
     = simple_form_for @thing do |f|
       = render 'shared/error_msg', model: @thing
       = f.input :name
       = f.button :submit
-
-The shared error message is a generic way of yielding problems in `views/shared/_error_msg.html.haml`.
-
-    - if model.errors.any?
-      .error_explanation
-        %h3= "#{pluralize(model.errors.count, "error")} saving #{model.class}:"
-        %ul
-          - model.errors.full_messages.each do |msg|
-            %li= msg
 
 The form can be used for the new thing in `app/views/things/new.html.haml`.
 
@@ -246,5 +269,8 @@ Edit `config/routes.rb`.
 
 Review `rake routes`.
 
+Next
+====
 
+We will refactor the things controller, but we must [Write Tests with RSpec](10-rspec-refactor.md), first.
 

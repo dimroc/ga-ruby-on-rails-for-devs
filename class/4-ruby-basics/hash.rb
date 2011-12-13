@@ -14,6 +14,10 @@ hash = {
   :yellow => { :french => "jaune", :russian => "жёлтый" }
 }
 
+hash.each do |entry|
+  puts "#{entry[0]} (#{entry[0].class}): #{entry[1][:french]}"
+end
+
 hash.each_pair do |name, value|
   puts "#{name} (#{name.class}): #{value}"
 end

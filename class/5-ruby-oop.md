@@ -20,6 +20,9 @@ All classes inherit from `Object`. You can inherit from another class.
 
 Instances can be created with `new` and are garbage collected.
 
+    puts Color.new.inspect # <Color: @name=nil>
+    puts Color.new("red").inspect # <Color: @name="red">
+
 Exceptions
 ----------
 
@@ -79,6 +82,8 @@ You can mix instance methods into another class with `include`.
     puts n.increment # 6
     puts n.decrement # 4
 
+Mixins promote composition over inheritance.
+
 Monkey Patching
 ---------------
 
@@ -108,4 +113,9 @@ Reflection is built-in and methods can and are often defined at runtime. You can
     puts Color.new("red").shine # shiny red
 
     Color.new.is_a?(Color) # true
+
+Next
+====
+
+Lets look at a [web application with RACK](6-rack-basics.md).
 

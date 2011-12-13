@@ -46,3 +46,8 @@ It can be run with ruby.
 
 Navigate to [localhost:9292](http://localhost:9292/).
 
+Next
+====
+
+Lets look at a [web application with Rails](7-rails-basics.md).
+

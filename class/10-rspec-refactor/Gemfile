@@ -14,5 +14,6 @@ group :test do
   gem "rspec-mocks", "~> 2.7"
   gem "database_cleaner", "~> 0.6"
   gem "spork", "~> 0.9.0.rc"
+  gem "fabrication", "~> 1.0"
 end
 

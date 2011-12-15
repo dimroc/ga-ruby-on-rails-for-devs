@@ -1,4 +1,10 @@
 class ThingsController < ApplicationController
+  before_filter :get_thing, :only => [ :edit, :show, :update, :destroy ]
+  
+  def get_thing
+    @thing = Thing.find(params[:id])
+    render file: "public/404.html", status: 404 unless @thing
+  end
 
   # GET /things
   def index
@@ -7,7 +13,6 @@ class ThingsController < ApplicationController
 
   # GET /things/1
   def show
-    @thing = Thing.find(params[:id])
   end
 
   # GET /things/new
@@ -17,7 +22,6 @@ class ThingsController < ApplicationController
 
   # GET /things/1/edit
   def edit
-    @thing = Thing.find(params[:id])
   end
 
   # POST /things
@@ -32,7 +36,6 @@ class ThingsController < ApplicationController
 
   # PUT /things/1
   def update
-    @thing = Thing.find(params[:id])
     if @thing.update_attributes(params[:thing])
       redirect_to @thing, notice: 'Thing was successfully updated.'
     else
@@ -42,7 +45,6 @@ class ThingsController < ApplicationController
 
   # DELETE /things/1
   def destroy
-    @thing = Thing.find(params[:id])
     @thing.destroy
     redirect_to things_url
   end

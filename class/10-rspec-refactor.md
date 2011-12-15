@@ -80,5 +80,76 @@ Run tests.
     rspec spec
 
 Exercise: add [spork](https://github.com/sporkrb/spork) to the tests for a quicker Rails startup.
+Exercise: add [fuubar](https://github.com/jeffkreeftmeijer/fuubar) progress bar.
 
+Controller Specs w/ Stubs
+-------------------------
+
+The implementation of `Thing.method` may be non-trivial, a mock replaces it with a simple return of a value. An RSpec `mock_model` also defines a unique model identity, methods such as `:new_record?`, etc. The first parameter to `mock_model` is a model class, and the second one is a hash of stubs.
+
+We can add a helper that creates a mock *Thing* the first time we need it. 
+
+    def mock_thing(stubs={})
+      @mock_thing ||= mock_model(Thing, stubs).as_null_object
+    end
+
+For the `:index` method we want to ensure that `@things` is assigned the collection of things. Because we're working with a mock object we have to stub `Thing.all`.
+
+    describe "GET index" do
+      it "assigns all things to @things" do
+        Thing.stub!(:all).and_return [ mock_thing ]
+        get :index
+        assigns(:things).should eq [ mock_thing ]
+      end
+    end
+
+Exercise: implement specs for the following methods.
+
+* GET new
+* GET edit
+* POST create
+* PUT update
+* DELETE destroy
+
+Controller Specs w/ Fabricators
+-------------------------------
+
+Mocks work well for trivial models. Many prefer to use real objects that are written to the database. Manufacturing those objects can be done by calling `Thing.create!`, but it doesn't provide good defaults. A *fabricator* can do that.
+
+    gem "fabrication"
+
+Add a fabricator for *Thing* in `spec/fabricators/thing_fabricator.rb`.
+
+    Fabricator(:thing) do
+      name { Fabricate.sequence(:name) { |i| "Thing Number #{i}" } }
+    end
+
+We can now use a real *Thing* for testing.
+
+    describe "PUT update" do
+      before(:each) do
+        @thing = Fabricate(:thing)
+      end
+      it "updates thing" do
+        put :update, :id => @thing.id.to_s, :thing => { 'name' => 'updated' }
+        @thing.reload.name.should == 'updated'
+      end
+    end
+
+Exercise: implement the remainder of the Thing controller tests with a Fabricator.
+
+Refactor in Confidence
+----------------------
+
+Controllers support filters that avoid copy-pasting. This is called *DRYing* a controller - *Don't Repeat Yourself*. 
+
+    class ThingsController < ApplicationController
+      before_filter :get_thing, :only => [ :edit, :show, :update, :destroy ]
+      def get_thing
+        @thing = Thing.find(params[:id])
+        render file: "public/404.html", status: 404 unless @thing
+      end
+    end
+
+[Other filters](http://rails.rubyonrails.org/classes/ActionController/Filters/ClassMethods.html) include `:after_filter`, `:around_filter`, etc.
 

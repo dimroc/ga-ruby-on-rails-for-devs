@@ -138,21 +138,6 @@ We can now use a real *Thing* for testing.
 
 Exercise: implement the remainder of the Thing controller tests with a Fabricator.
 
-Refactor in Confidence
-----------------------
-
-Controllers support filters that avoid copy-pasting. This is called *DRYing* a controller - *Don't Repeat Yourself*. 
-
-    class ThingsController < ApplicationController
-      before_filter :get_thing, :only => [ :edit, :show, :update, :destroy ]
-      def get_thing
-        @thing = Thing.find(params[:id])
-        render file: "public/404.html", status: 404 unless @thing
-      end
-    end
-
-[Other filters](http://rails.rubyonrails.org/classes/ActionController/Filters/ClassMethods.html) include `:after_filter`, `:around_filter`, etc.
-
 View Specs
 ----------
 
@@ -190,5 +175,20 @@ While we can test individual components, we also want to ensure that the entire 
         Thing.count.should == 0
       end
     end
+
+Refactor in Confidence
+----------------------
+
+Controllers support filters that avoid copy-pasting. This is called *DRYing* a controller - *Don't Repeat Yourself*. Now that we have specs that cover the application, we can refactor in confidence. 
+
+    class ThingsController < ApplicationController
+      before_filter :get_thing, :only => [ :edit, :show, :update, :destroy ]
+      def get_thing
+        @thing = Thing.find(params[:id])
+        render file: "public/404.html", status: 404 unless @thing
+      end
+    end
+
+[Other filters](http://rails.rubyonrails.org/classes/ActionController/Filters/ClassMethods.html) include `:after_filter`, `:around_filter`, etc.
 
 

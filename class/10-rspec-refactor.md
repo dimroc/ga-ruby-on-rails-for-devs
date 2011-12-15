@@ -153,3 +153,42 @@ Controllers support filters that avoid copy-pasting. This is called *DRYing* a c
 
 [Other filters](http://rails.rubyonrails.org/classes/ActionController/Filters/ClassMethods.html) include `:after_filter`, `:around_filter`, etc.
 
+View Specs
+----------
+
+Controllers are not executed in a normal view spec. You must assign variables explicitly. The following spec is `spec/views/things/index.html.haml_spec.rb`.
+
+    describe "things/index.html.haml" do
+      before(:each) do
+        @thing = Fabricate(:thing)
+        assign(:things, Thing.all)
+      end
+      it "renders a list of things" do
+        render
+        assert_select "tr>td", :text => @thing.name, :count => 1
+      end
+    end
+
+Acceptance Tests
+----------------
+
+While we can test individual components, we also want to ensure that the entire *Thing* feature is working. This can be done with an acceptance test that that is going to execute real user actions with a browser with [capybara](https://github.com/jnicklas/capybara).
+
+    require 'spec_helper'
+
+    feature "Things", :driver => :selenium do
+      scenario "are displayed in a table" do
+        thing = Fabricate(:thing)
+        visit "/things"
+        page.should have_css "td", text: thing.name
+      end
+      scenario "can be destroyed" do
+        thing = Fabricate(:thing)
+        visit "/things"
+        page.evaluate_script('window.confirm = function() { return true; }')
+        click_link "Destroy"
+        Thing.count.should == 0
+      end
+    end
+
+

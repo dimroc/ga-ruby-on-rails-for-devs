@@ -100,7 +100,8 @@ describe ThingsController do
       end
       it "assigns all things to @things" do
         get :index
-        assigns(:things).should eq [ @thing ]
+        assigns(:things).count.should == 1
+        assigns(:things).first.id.should == @thing.id
       end
     end
     describe "GET new" do
@@ -115,7 +116,7 @@ describe ThingsController do
       end
       it "assigns the requested thing as @thing" do
         get :edit, :id => @thing.id.to_s
-        assigns(:thing).should eq @thing
+        assigns(:thing).id.should == @thing.id
       end
     end
     describe "POST create" do

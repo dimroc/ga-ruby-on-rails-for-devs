@@ -15,7 +15,7 @@ Class Curriculum
 * [Introduction to Rails](7-rails-basics.md)
 * [Live Rails MVC Application and Scaffold](8-rails-mvc-scaffold.md)
 * [Live Rails MVC Application from Scratch](9-rails-mvc-dev.md)
-* [Refactoring with RSpec Tests](10-rspec-refactor.md)
+* [Refactoring with RSpec](10-rspec-refactor.md)
 
 * Intermediate Ruby Language Concepts
 * Introduction to ActiveRecord w/ Postgres and MySQL

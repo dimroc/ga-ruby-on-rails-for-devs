@@ -3,6 +3,8 @@ Refactoring with RSpec
 
 [RSpec](http://relishapp.com/rspec) is a Behaviour-Driven Development tool for Ruby programmers. BDD is an approach to software development that combines Test-Driven Development, Domain Driven Design, and Acceptance Test-Driven Planning. RSpec helps you do the TDD part of that equation, focusing on the documentation and design aspects of TDD.
 
+RSpec lets you focus on testing vs. theorizing about testing.
+
 Gemfile
 -------
 
@@ -16,10 +18,12 @@ Gems from the test group aren't installed in production.
       gem "rspec-mocks", "~> 2.7"
     end
 
+You can also have a `:development` group for your favorite tools.
+
 Spec Helper
 -----------
 
-Included with every spec. Defines RSpec behavior, such as what to do before every test or after the test suite finished.
+A helper can be included with every spec. It defines RSpec behavior, such as what to do before every test or after the test suite finished.
 
     require 'rubygems'
 
@@ -40,7 +44,7 @@ Included with every spec. Defines RSpec behavior, such as what to do before ever
 A Model Spec
 ------------
 
-A simple test can execute model validations and ensure they perform as expected. Create `spec/models/thing_spec.rb`.
+A simple spec can execute model validations and ensure they perform as expected. Create `spec/models/thing_spec.rb`.
 
     require 'spec_helper'
 
@@ -56,7 +60,7 @@ A simple test can execute model validations and ensure they perform as expected.
 Mock Objects vs. Real Data
 --------------------------
 
-We'll use a real database for our testing instead of relying on mock objects. This means we need a clean copy of the database for every test. There's a gem for that.
+Sometimes we'll want to use a real database for our testing instead of relying on mock objects. This means we need a clean copy of the database for every test. There's a gem for that.
 
     gem "database_cleaner"
 
@@ -79,8 +83,15 @@ Run tests.
 
     rspec spec
 
-Exercise: add [spork](https://github.com/sporkrb/spork) to the tests for a quicker Rails startup.
-Exercise: add [fuubar](https://github.com/jeffkreeftmeijer/fuubar) progress bar.
+Exercise
+--------
+
+Add [fuubar](https://github.com/jeffkreeftmeijer/fuubar) progress bar.
+
+Exercise
+--------
+
+You must have noticed that Rails takes a while to load. Rails is a large codebase that is interpreted every time you run `rspec`. Add [spork](https://github.com/sporkrb/spork) to the `:test` group to avoid reloading Rails every time you run tests and [rails-dev-boost](https://github.com/thedarkone/rails-dev-boost) to the `:development` group that brings an optimization from a future version of Rails that prevents reloading unchanged models when editing code behind a running Rails server.
 
 Controller Specs w/ Stubs
 -------------------------
@@ -103,7 +114,10 @@ For the `:index` method we want to ensure that `@things` is assigned the collect
       end
     end
 
-Exercise: implement specs for the following methods.
+Exercise
+--------
+
+Implement specs for the remaining methods.
 
 * GET new
 * GET edit
@@ -114,7 +128,7 @@ Exercise: implement specs for the following methods.
 Controller Specs w/ Fabricators
 -------------------------------
 
-Mocks work well for trivial models. Many prefer to use real objects that are written to the database. Manufacturing those objects can be done by calling `Thing.create!`, but it doesn't provide good defaults. A *fabricator* can do that.
+Mock objects work well for trivial models. Many Rubyists prefer to use real objects that are written to the database in tests, especially for higher level integration tests. Manufacturing these objects can be done by calling `Thing.create!`, but it doesn't provide good defaults or unique values. A *fabricator* from a gem called [fabrication](https://github.com/paulelliott/fabrication) can do that.
 
     gem "fabrication"
 
@@ -136,7 +150,10 @@ We can now use a real *Thing* for testing.
       end
     end
 
-Exercise: implement the remainder of the Thing controller tests with a Fabricator.
+Exercise
+--------
+
+Implement the remainder of the Thing controller tests with a Fabricator.
 
 View Specs
 ----------
@@ -157,7 +174,7 @@ Controllers are not executed in a normal view spec. You must assign variables ex
 Acceptance Tests
 ----------------
 
-While we can test individual components, we also want to ensure that the entire *Thing* feature is working. This can be done with an acceptance test that that is going to execute real user actions with a browser with [capybara](https://github.com/jnicklas/capybara).
+While we can test individual components, we also want to ensure that the entire *Thing* feature is working. This can be done with an acceptance test that that is going to execute real user actions with a browser with [capybara](https://github.com/jnicklas/capybara) and [selenium](http://seleniumhq.org/).
 
     require 'spec_helper'
 
@@ -179,16 +196,19 @@ While we can test individual components, we also want to ensure that the entire 
 Refactor in Confidence
 ----------------------
 
-Controllers support filters that avoid copy-pasting. This is called *DRYing* a controller - *Don't Repeat Yourself*. Now that we have specs that cover the application, we can refactor in confidence. 
+Controllers support filters that avoid copy-pasting. This is called *DRYing* a controller. *DRY* stands for *Don't Repeat Yourself*. Now that we have specs that cover the application, we can refactor in confidence. 
 
     class ThingsController < ApplicationController
       before_filter :get_thing, :only => [ :edit, :show, :update, :destroy ]
       def get_thing
         @thing = Thing.find(params[:id])
-        render file: "public/404.html", status: 404 unless @thing
       end
     end
 
 [Other filters](http://rails.rubyonrails.org/classes/ActionController/Filters/ClassMethods.html) include `:after_filter`, `:around_filter`, etc.
 
+Exercise
+--------
+
+Modify the application to redirect to a *404 Not Found* page when a user requests a *Thing* that doesn't exist. Exercise your TDD - write two failing controller and acceptance tests first.
 

@@ -2,8 +2,11 @@ class ThingsController < ApplicationController
   before_filter :get_thing, :only => [ :edit, :show, :update, :destroy ]
   
   def get_thing
-    @thing = Thing.find(params[:id])
-    render file: "public/404.html", status: 404 unless @thing
+    begin
+      @thing = Thing.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      render file: "public/404.html", status: 404
+    end
   end
 
   # GET /things

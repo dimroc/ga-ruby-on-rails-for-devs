@@ -17,6 +17,9 @@ Class Curriculum
 * [Live Rails MVC Application from Scratch](9-rails-mvc-dev.md)
 * [Refactoring with RSpec](10-rspec-refactor.md)
 
+TODO
+----
+
 * Intermediate Ruby Language Concepts
 * Introduction to ActiveRecord w/ Postgres and MySQL
 * Database Migrations
@@ -27,7 +30,6 @@ Class Curriculum
 * Advanced Ruby Language Concepts
 * Authentication in Rails
 * Building a RESTful API
-* Refactoring in Confidence
 * Introduction to Ruby DSLs
 * Building a production-grade RESTful API
 * Getting things done with community GEMs

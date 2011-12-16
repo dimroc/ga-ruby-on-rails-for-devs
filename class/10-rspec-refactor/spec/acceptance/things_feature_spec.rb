@@ -32,4 +32,8 @@ feature "Things", :driver => :selenium do
     click_link "Destroy"
     Thing.count.should == 0
   end
+  scenario "redirects to a 404 page if a thing doesn't exist" do
+    visit "/things/invalid"
+    page.should have_content "The page you were looking for doesn't exist."
+  end
 end

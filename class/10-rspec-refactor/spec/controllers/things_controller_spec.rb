@@ -26,6 +26,10 @@ describe ThingsController do
         get :edit, :id => "37"
         assigns(:thing).should be mock_thing
       end
+      it "redirects to 404 not found if thing doesn't exist" do
+        get :edit, :id => "37"
+        response.status.should == 404
+      end
     end
     describe "POST create" do
       describe "with valid params" do

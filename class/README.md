@@ -16,11 +16,11 @@ Class Curriculum
 * [Live Rails MVC Application and Scaffold](8-rails-mvc-scaffold.md)
 * [Live Rails MVC Application from Scratch](9-rails-mvc-dev.md)
 * [Refactoring with RSpec](10-rspec-refactor.md)
+* [Real Ruby and Meta-Programming](11-real-ruby.md)
 
 TODO
 ----
 
-* Intermediate Ruby Language Concepts
 * Introduction to ActiveRecord w/ Postgres and MySQL
 * Database Migrations
 * Not only SQL, ActiveRecord with MongoDB

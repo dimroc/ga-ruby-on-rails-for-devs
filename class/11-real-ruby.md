@@ -1,0 +1,137 @@
+Real Ruby and Meta-Programming
+==============================
+
+Asterisk, Splat and Hash
+------------------------
+
+Collects the remaining arguments into an array.
+
+    def splat(* args)
+      p "#{args.length}: #{args}"
+    end
+
+    splat 1, 2, 3, 4 # 4: [1, 2, 3, 4]
+
+How else can we pass a variable number of arguments?
+
+    def var(args)
+      p "#{args.inspect}"
+    end
+
+    var "1" => "2", "3" => "4" # { "1" => "2", "3" => "4" }
+
+Blocks and Yields
+-----------------
+
+A parameter preceded with an ampersand takes a `do` block. It is actually a `Proc`.
+
+    def f1(& b)
+      puts "#{b.class}"
+      yield 
+    end
+
+    f1 do
+      puts 'hello world' # Proc, hello world
+    end
+
+We can take advantage of this to create class variables that can be assigned to, read or used.
+
+    class F
+
+      def thing=(value)
+        @thing = value
+      end
+
+      def thing(& b)
+        if block_given?
+          yield @thing
+        else
+          @thing
+        end
+      end
+
+    end
+
+    f = F.new
+    p f.thing # nil
+
+    f.thing = 42
+    p f.thing # 42
+
+    f.thing do |value|
+      p value * 2 # 84
+    end
+
+The same idea is used in `File` to close the file handle after the do block yields.
+
+    File.open(filename) do |h|
+      # read file
+    end
+
+    # file handle is closed
+
+Lambda vs. Proc
+---------------
+
+Both are anonymous functions that behave in very similar ways.
+
+    f = Proc.new { p @thing }
+    f.call # nil
+
+    l = lambda { p @thing }
+    l.call # nil
+
+    @thing = 42
+
+    f.call # 42
+    l.call # 42
+
+One subtle difference is in how both enforce *arity*.
+
+    f = Proc.new { |t| p t }
+    f.call 1, 2 # 1
+
+    l = lambda { |t| p t }
+    # l.call 1, 2 # ArgumentError 
+
+The other is in how [return is handled](http://stackoverflow.com/questions/626/when-to-use-lambda-when-to-use-proc-new).
+
+Methods and Send
+----------------
+
+Ruby methods are messages. The `send` function invokes a method.
+
+    p "hello world".send(:upcase) # "HELLO WORLD"
+
+When you use the & operator you transform the object on the right into a `Proc`. We can now invoke a method on every element of an array.
+
+    class Symbol
+      alias_method :old_to_proc, :to_proc
+      def to_proc
+        puts "to_proc for symbol `#{self}`"
+        old_to_proc
+      end
+    end
+
+    p ["hello", "world"].map(&:upcase) # to_proc for symbol `upcase`, ["HELLO", "WORLD"]
+
+Meta Programming
+----------------
+
+Ruby is well known for its *meta-programming* abilities. One of the most interesting features is `method_missing`, a chance to define a function before receiving a `NoMethodError`. It's a [Kernel](http://www.ruby-doc.org/core-1.9.3/Kernel.html) method.
+
+    class Thing
+      def method_missing(method, * args)
+        if method.to_s[0..2] == "to_"
+          "i am a #{method.to_s[3..-1]}"
+        else
+          super
+        end
+      end
+    end
+
+    p Thing.new.to_computer # "i am a computer"
+    # p Thing.new.invalid # NoMethodError
+
+In other languages meta-programming is *hard*. In Ruby it's very simple and transparent. As Matz says: *"Have fun, be safe and use your imagination!"*.
+

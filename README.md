@@ -6,12 +6,12 @@ Ruby on Rails for Developers
 Lectures
 --------
 
-* [Lectures](blob/master/lectures/README.md)
+* [Lectures](http://github.com/generalassembly/curriculum_RubyForDevs/blob/master/lectures/README.md)
 
 Curriculum
 ----------
 
-* [Class Materials](blob/master/class/README.md)
+* [Class Materials](http://github.com/generalassembly/curriculum_RubyForDevs/blob/master/class/README.md)
 
 Links
 -----

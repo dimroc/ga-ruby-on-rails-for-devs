@@ -1,8 +1,8 @@
 Class Curriculum
 ================
 
-Lecture 0: Getting Started
---------------------------
+Introduction: Getting Started
+-----------------------------
 
 Students are able to demonstrate familiarity with shell, are able to setup a basic Ruby development environment and to execute simple Ruby code.
 

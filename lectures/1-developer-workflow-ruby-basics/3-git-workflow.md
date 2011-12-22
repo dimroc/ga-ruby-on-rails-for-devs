@@ -1,6 +1,14 @@
 Introduction to Git
 ===================
 
+Objective
+---------
+
+Learn the basics of Git and understand what role Github plays in the ecosystem of Ruby and Ruby-on-Rails. Learn concepts, such as *snapshot*, *repository*, *pull*, *push* and *topical branches*.
+
+Git
+---
+
 Git is a fast, open source, distributed version control system. It's unlike CVS, SourceSafe, ClearCase, Subversion or Perforce, and is somewhat like Mercurial (Hg). Distributed means it works offline. Git is an essential enabler of the ecosystem of Ruby and Ruby-on-Rails.
 
 Git Snapshots
@@ -133,7 +141,8 @@ To contribute to someone else's work, create a new *fork* via Github, then clone
 Exercise
 --------
 
-In pairs, fork each-other's repositories, clone your fork, make a change to *README.md* and create a pull request. Examine the difference on Github and merge the pull request.
+In pairs, fork each-other's repositories, clone your fork, make a change to *README.md* and create a pull request. Examine the difference on Github and merge the pull request. Extra points for creating a topical branch.
+
 
 Next
 ====

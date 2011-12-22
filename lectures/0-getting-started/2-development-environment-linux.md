@@ -88,9 +88,3 @@ PostgreSQL
 
 We'll use PostgreSQL with our Rails application. Download and install from [here](http://www.enterprisedb.com/products-services-training/pgdownload).
 
-Next
-====
-
-[Introduction to GIT with Github and Developer Workflow](3-git-workflow.md)
-
-

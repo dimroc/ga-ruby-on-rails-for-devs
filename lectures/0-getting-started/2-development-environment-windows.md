@@ -42,8 +42,3 @@ PostgreSQL
 
 We'll use PostgreSQL with our Rails application. Install from [here](http://www.postgresql.org/download/windows/).
 
-Next
-====
-
-[Introduction to GIT with Github and Developer Workflow](3-git-workflow.md)
-

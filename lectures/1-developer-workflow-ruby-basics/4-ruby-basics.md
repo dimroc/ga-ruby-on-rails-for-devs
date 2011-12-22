@@ -1,6 +1,11 @@
 Ruby Basics
 ===========
 
+Objective
+---------
+
+Learn the basics of Ruby focusing on concepts that differentiate it from other languages.
+
 Hello World
 -----------
 
@@ -27,6 +32,11 @@ Double-quoted strings are expanded.
     puts "Hello #{world}" # Hello World
     puts 'Hello #{world}' # Hello #{world}
 
+Exercise
+--------
+
+Find two ways to print out "Hello World" in quotes.
+
 Strings
 -------
 
@@ -46,6 +56,11 @@ Operations with a bang (!) have consequences, ie. are performed in-place.
 Regular expressions are built-in.
 
     puts "Hello World" =~ /World/
+
+Exercise
+--------
+
+Research the difference between `p object` and `puts object`. Where are the `p` and `puts` functions defined?
 
 Loops
 -----
@@ -69,6 +84,11 @@ A loop with an iterator takes a *block*.
       puts i
     }
 
+Assignment
+----------
+
+Implement a loop that prints odd numbers.
+
 Branches
 --------
 
@@ -91,6 +111,11 @@ Case will evaluate the argument once and `when` can contain an expression.
     when 4 then puts "2+2 is 4"
     else puts "2+2 is something else"
     end
+
+Assignment
+----------
+
+Implement a `case` statement that has different types of objects in different `when` paths. 
 
 Arrays
 ------
@@ -116,6 +141,11 @@ Nil entries are also objects.
 Nested arrays can be flattenned.
 
     puts [ [ 1, 2 ], [ 3 ], [], 4 ].flatten # [ 1, 2, 3, 4 ]
+
+Assignment
+----------
+
+Read elements on the console, collect them in a flat sorted array and print out the result.
 
 Hashes
 ------

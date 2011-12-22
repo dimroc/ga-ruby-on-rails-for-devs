@@ -1,5 +1,5 @@
-Lecture 0: Getting Started
-==========================
+Introduction: Getting Started
+=============================
 
 Objective
 ---------

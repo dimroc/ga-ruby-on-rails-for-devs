@@ -1,6 +1,17 @@
 Rack Basics
 ===========
 
+Objective
+---------
+
+Understand Rack, an essential component of Rails.
+
+Rack
+----
+
+Rack provides a minimal, modular and adaptable interface for developing web applications in Ruby. 
+It includes basic implementations of request, response, cookies & sessions. And a good number of usefult middlewares.
+
 Bundler
 -------
 
@@ -17,12 +28,6 @@ Install gems.
 
     $ bundle install
     Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
-
-Rack
-----
-
-Rack provides a minimal, modular and adaptable interface for developing web applications in Ruby. 
-It includes basic implementations of request, response, cookies & sessions. And a good number of usefult middlewares.
 
 Server
 ------
@@ -45,6 +50,11 @@ It can be run with ruby.
     $ ruby server.rb
 
 Navigate to [localhost:9292](http://localhost:9292/).
+
+Exercise
+--------
+
+Build a basic web application on top of Rack that can serve files from the local file system.
 
 Next
 ====

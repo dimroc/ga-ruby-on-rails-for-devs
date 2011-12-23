@@ -277,8 +277,10 @@ Edit `config/routes.rb`.
 
 Review `rake routes`.
 
-Next
-====
+Exercise
+--------
 
-We will refactor the things controller, but we must [Write Tests with RSpec](10-rspec-refactor.md), first.
+Extend the Rails application with authentication by using the devise gem. Only authenticated users should be able to create, edit and destroy things. Deploy the application on Heroku.
+
+As a stretch goal, if there're no users in the system the application should let you create one.
 

@@ -190,7 +190,7 @@ Applies a block to each element and returns a new collection.
 Injecting
 ---------
 
-  [ 1, 2, 3, 4 ].inject(0) { |result, element| result + element } # => 10
+    [ 1, 2, 3, 4 ].inject(0) { |result, element| result + element } # => 10
 
 Chaining
 -------

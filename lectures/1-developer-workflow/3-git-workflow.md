@@ -143,14 +143,3 @@ Exercise
 
 In pairs, fork each-other's repositories, clone your fork, make a change to *README.md* and create a pull request. Examine the difference on Github and merge the pull request. Extra points for creating a topical branch.
 
-
-Next
-====
-
-We know enough about Git to be dangerous, next are [Ruby Basics](4-ruby-basics.md).
-
-Links
------
-
-* [Learn Git](http://learn.github.com/p/intro.html)
-

@@ -26,15 +26,17 @@ A successful student is able to extend the Rails application in the lecture with
 
 An above-average student will also implement prompting the user to create an account if the application doesn't have any users.
 
-TODO: Refactor into Lectures
-----------------------------
+Lecture 3: RSpec and ActiveRecord
+---------------------------------
 
-* [Refactoring with RSpec](10-rspec-refactor.md)
-* [Real Ruby and Meta-Programming](11-real-ruby.md)
-* [Complete Active Record](12-active-record.md)
+Learn about Behavior Driven Development with RSpec, learn about Ruby meta-programming and dive into `ActiveRecord`.
+
+A successful student is able to refactor and extend the application given in exercises.
+
+An above-average student will also TODO.
 
 TODO
-----
+====
 
 * Not only SQL, ActiveRecord with MongoDB
 * Introduction to ActionPack

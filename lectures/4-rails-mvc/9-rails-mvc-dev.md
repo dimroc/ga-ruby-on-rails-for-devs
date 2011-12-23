@@ -106,7 +106,7 @@ Re-run `rake -T` and make sure that database tasks are now displayed.
 Exercise
 --------
 
-Create a Rake task in `lib/tasks` that loads this file and displays the configuration for the current environment. When running this task, check whether the `database` value is set - you may need to set `YAML::ENGINE.yamler = 'syck'`.
+Create a Rake task in `lib/tasks` that loads this file and displays the database configuration for the current environment. When running this task, check whether the `database` value is set - you may need to set `YAML::ENGINE.yamler = 'syck'`.
 
 Database Migrations
 -------------------
@@ -280,7 +280,7 @@ Review `rake routes`.
 Exercise
 --------
 
-Extend the Rails application with authentication by using the [devise gem](https://github.com/plataformatec/devise). Only authenticated users should be able to create, edit and destroy things. Deploy the application on Heroku.
+Extend a generic Rails application with authentication by using the [devise gem](https://github.com/plataformatec/devise). Only authenticated users should be able to create, edit and destroy things. Deploy the application on Heroku.
 
 As a stretch goal, if there're no users in the system the application should let you create one.
 

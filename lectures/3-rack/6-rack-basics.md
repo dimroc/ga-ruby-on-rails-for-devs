@@ -56,8 +56,3 @@ Exercise
 
 Build a basic web application on top of Rack that can serve files from the local file system.
 
-Next
-====
-
-Lets look at a [web application with Rails](7-rails-basics.md).
-

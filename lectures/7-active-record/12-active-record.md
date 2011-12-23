@@ -98,3 +98,8 @@ Callbacks and Observers
 
 Built-in callbacks, such as `before_validation`, allow participating in the object's lifecycle. Callbacks are instance methods. You can also create observers that derive from `ActiveRecord::Observer` that `observe Model` and implement callbacks, such as `after_create`.
 
+Exercise
+--------
+
+TODO
+

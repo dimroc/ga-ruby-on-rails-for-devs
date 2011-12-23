@@ -84,8 +84,8 @@ A loop with an iterator takes a *block*.
       puts i
     }
 
-Assignment
-----------
+Exercise
+--------
 
 Implement a loop that prints odd numbers.
 
@@ -112,8 +112,8 @@ Case will evaluate the argument once and `when` can contain an expression.
     else puts "2+2 is something else"
     end
 
-Assignment
-----------
+Exercise
+--------
 
 Implement a `case` statement that has different types of objects in different `when` paths. 
 
@@ -142,8 +142,8 @@ Nested arrays can be flattenned.
 
     puts [ [ 1, 2 ], [ 3 ], [], 4 ].flatten # [ 1, 2, 3, 4 ]
 
-Assignment
-----------
+Exercise
+--------
 
 Read elements on the console, collect them in a flat sorted array and print out the result.
 

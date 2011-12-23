@@ -9,5 +9,5 @@ LLearn about Ruby meta-programming.
 Class Materials
 ---------------
 
-* [Real Ruby and Meta-Programming](11-real-ruby.md)
+* [Real Ruby and Meta-Programming](6.1-real-ruby.md)
 

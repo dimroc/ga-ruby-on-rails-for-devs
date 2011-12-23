@@ -9,6 +9,6 @@ Learn Ruby basics with special focus on how it differs from other mainstream pro
 Class Materials
 ---------------
 
-* [Basic Language Concepts](4-ruby-basics.md)
-* [Ruby OOP, Exceptions and Mixins](5-ruby-oop.md)
+* [Basic Language Concepts](2.1-ruby-basics.md)
+* [Ruby OOP, Exceptions and Mixins](2.2-ruby-oop.md)
 

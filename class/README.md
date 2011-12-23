@@ -6,36 +6,54 @@ Introduction: Getting Started
 
 Students are able to demonstrate familiarity with shell, are able to setup a basic Ruby development environment and to execute simple Ruby code.
 
-Lecture 1: Developer Workflow and Ruby Basics
----------------------------------------------
+Lecture 1: Developer Workflow
+-----------------------------
 
-Students learn how to use Git and exercise the development workflow via Github that is used by the Ruby community. A successful student is able to exercise the Git/Github pull request workflow. An above-average student is able to use a topical branch in this process.
+Students learn how to use Git and exercise the development workflow via Github that is used by the Ruby community. 
+
+* A successful student is able to exercise the Git/Github pull request workflow.
+* An above-average student is able to use a topical branch in this process.
+
+Lecture 2: Ruby Basics
+----------------------
 
 Students learn about the origins of Ruby and are fluent in basic Ruby language features. They are able to write simple object-oriented Ruby code and understand mixins and exception handling. 
 
-A successful student is able to implement an extension to calculate a Euclidian distance between two hashes. 
+* A successful student is able to implement an extension to calcula* te a Euclidian distance between two hashes.
+* An above-average student is able to implement it using Ruby `map` and `inject` constructs with less than 8 lines of code.
 
-An above-average student is able to implement it using Ruby `map` and `inject` constructs with less than 8 lines of code.
+Lecture 3: Rack
+---------------
 
-Lecture 2: Ruby, Rack and Rails MVC
------------------------------------
+Students learn about Rails and Rack by building a basic application on top of Rack, which paves a clear path to understanding what Rails is. 
 
-Students learn about Rails and Rack by building a basic application on top of Rack, which paves a clear path to understanding what Rails is. The class generates a Rails application with the `rails` command, then makes a few steps back and assembles a Rails application from scratch. This lecture also serves as an introduction to test-driven development.
+* A successful student is able to implement a simple Rack application that serves files.
+* An above-average student will take care of not serving files from anywhere in the file system.
+
+Lecture 4: Rails MVC
+--------------------
+
+The class generates a Rails application with the `rails` command, then makes a few steps back and assembles a Rails application from scratch.
 
 A successful student is able to extend the Rails application in the lecture with authentication using the `devise` gem by creating a user model in the database with a database migration. This application should run on Heroku.
 
 An above-average student will also implement prompting the user to create an account if the application doesn't have any users.
 
-Lecture 3: RSpec and ActiveRecord
----------------------------------
+Lecture 5: RSpec
+----------------
 
-Learn about Behavior Driven Development with RSpec, learn about Ruby meta-programming and dive into `ActiveRecord`.
+Students learn about test-driven and behavior-driven development with RSpec.
 
-A successful student is able to refactor and extend the application given in exercises.
+Lecture 6: Ruby Meta-Programming
+--------------------------------
 
-An above-average student will also TODO.
+Students learn about Ruby meta-programming.
 
-TODO
+Lecture 7: ActiveRecord
+-----------------------
+
+Students learn about ActiveRecord.
+
 ====
 
 * Not only SQL, ActiveRecord with MongoDB

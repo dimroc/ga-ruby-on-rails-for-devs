@@ -9,5 +9,5 @@ Dive into `ActiveRecord`.
 Class Materials
 ---------------
 
-* [Complete Active Record](12-active-record.md)
+* [Complete Active Record](7.1-active-record.md)
 

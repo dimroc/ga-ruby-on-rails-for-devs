@@ -9,5 +9,5 @@ Learn the typical developer workflow used by the Ruby-on-Rails community. Unders
 Class Materials
 ---------------
 
-* [Git via Github and Dev Workflow](3-git-workflow.md)
+* [Git via Github and Dev Workflow](1.1-git-workflow.md)
 

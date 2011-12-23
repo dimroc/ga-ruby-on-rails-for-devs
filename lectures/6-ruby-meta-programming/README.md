@@ -4,7 +4,7 @@ Lecture 6: Ruby Meta-Programming
 Objective
 ---------
 
-LLearn about Ruby meta-programming.
+Learn about Ruby meta-programming.
 
 Class Materials
 ---------------

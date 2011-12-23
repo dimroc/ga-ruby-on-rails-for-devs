@@ -15,4 +15,5 @@ Class Materials
   [Linux](0.3-development-environment-linux.md), 
   [Mac](0.3-development-environment-osx.md) and 
   [Windows](0.3-development-environment-windows.md)
+* [Pivotal Tracker](0.4-pivotal-tracker.md)
 

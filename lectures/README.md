@@ -1,3 +1,13 @@
+Class Dates
+===========
+
+* Week 1:  1/9  and 1/11
+* Week 2:  1/16 and 1/18
+* Week 3:  1/23 and 1/25
+* Week 4:  1/30 and 2/1
+* Week 5:  2/6  and 2/8
+* Week 6:  2/13 and 2/15
+
 Lectures
 ========
 

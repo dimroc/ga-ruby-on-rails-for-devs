@@ -8,18 +8,18 @@ class WebServer
   
   def call(env)
     path_info = Rack::Utils.unescape(env['PATH_INFO'])
-    # append index.html if url ends with a slash
-    path_info = "index.html" if path_info[-1] == '/'
-    # resolve the full path
-    full_path = File.expand_path(File.join(@public_path, path_info))
     begin
+      # resolve the full path
+      full_path = File.expand_path(File.join(@public_path, path_info))
       # disallow relative paths above 'public'
       raise SecurityError unless full_path.start_with?(@public_path)
+      # the default file name inside a folder is index.html
+      full_path = File.join(full_path, "index.html") if File.directory?(full_path)
       # serve file content
       content = File.read(full_path)
       serve 200, env, content, Rack::Mime.mime_type(File.extname(full_path))
     rescue SecurityError
-      serve 401, env, "access denied: #{path_info}", "text/plain"
+      serve 403, env, "permission denied: #{path_info}", "text/plain"
     rescue Errno::ENOENT
       serve 404, env, "file not found: #{path_info}", "text/plain"
     rescue Exception => e

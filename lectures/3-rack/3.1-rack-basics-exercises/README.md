@@ -5,8 +5,8 @@ Basic Web Server w/ Rack
 2. Server should return the correct *Content-Length* header. The value of the Content-Length header is a string that contains the number of bytes that are sent from the server to the client.
 3. Server should return a *404 Not Found* error if the file doesn't exist. For example, navigating to http://localhost:9292/invalid.html should produce a *404 Not Found* error.
 4. Bonus point if the server can serve files in subfolders of *public*. For example, navigating to http://localhost:9292/subfolder/index.html or http://localhost:9292/images/ should return *public/images/index.html*.
-5. Bonus point if the server can also serve JPG images that render within an HTML page.
-6. Bonus point if the server can serve files from directories that contain spaces in their name.
+5. Bonus point if the server can also serve images, such as PNG, that render within an HTML page.
+6. Bonus point if the server can serve files from directories that contains spaces in their names.
 
 ```
     |-Gemfile

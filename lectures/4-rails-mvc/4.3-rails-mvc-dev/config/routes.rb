@@ -1,3 +1,3 @@
-RailsMVC::Application.routes.draw do
+RailsMvc::Application.routes.draw do
   resources :things
 end

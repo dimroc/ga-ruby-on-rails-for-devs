@@ -1,0 +1,10 @@
+first:
+  name: 'First Thing'
+  description: 'Thing number 1'
+
+second:
+  name: 'Second Thing'
+  description: 'Thing number 2'
+
+
+

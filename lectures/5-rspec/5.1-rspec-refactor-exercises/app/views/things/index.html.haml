@@ -5,13 +5,12 @@
     %th= "Name"
     %th
     %th
-
+  
   - @things.each do |thing|
     %tr
       %td= thing.name
-      %td= link_to 'Edit', edit_thing_path(thing)
-      %td= link_to 'Destroy', thing, :confirm => "Are you sure?", :method => :delete
-
-= link_to "New Thing", new_thing_path
-
+      %td= link_to "Edit", edit_thing_path(thing)
+      %td= link_to "Destroy", thing, :confirm => "Are you sure?", :method => :delete
+      
+=link_to "New Thing", new_thing_path
 

@@ -6,14 +6,14 @@ common: &common
   password: password
 
 development:
-  database: rails_development
+  database: rails_rspec_development
   <<: *common
 
 test:
-  database: rails_test
+  database: rails_rspec_test
   <<: *common
 
 production:
-  database: rails_production
+  database: rails_rspec_production
   <<: *common
 

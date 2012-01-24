@@ -5,7 +5,7 @@ Implement a model called `Gadget` and a model called `Widget` that implements a 
 =end
 
 module CollectionNotifier
-  Events = [:added, :empty]
+  EVENTS = [:added, :empty]
 
   def self.included(base)
     base.extend ClassMethods
@@ -14,7 +14,7 @@ module CollectionNotifier
 
   module ClassMethods
 
-    Events.each do |event|
+    EVENTS.each do |event|
 
       # Create 'when_<event>' class method
       define_method("when_#{event}") do |*callbacks|
@@ -36,7 +36,7 @@ module CollectionNotifier
 
     # Create '_invoke_<event>_callbacks' to allow one to invoke event callbacks
     def self.included(base)
-      Events.each do |event|
+      EVENTS.each do |event|
         base.send(:define_method, "_invoke_#{event}_callbacks") do
           base.instance_variable_get("@_#{event}_callbacks").each do |callback|
             if callback.is_a? Proc
@@ -73,7 +73,7 @@ class Widget
 
   def pop
     if rval = @_collection.pop
-      _invoke_empty_callbacks if @_collection.count == 0
+      _invoke_empty_callbacks if @_collection.empty?
       rval
     end
   end

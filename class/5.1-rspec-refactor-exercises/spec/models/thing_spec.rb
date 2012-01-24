@@ -1,14 +1,25 @@
 require 'spec_helper'
 
-describe Thing do
-  it "can be created with a name" do
-    Thing.new({name: "thing"}).should be_valid
+describe "A Thing" do
+  
+  context "with a name" do
+    
+    let(:thing) { Thing.new }
+    
+    before(:each) do
+      thing.name = "Name"
+    end
+    
+    it "is valid" do
+      thing.should be_valid
+    end
+    
+    it "can be persisted" do
+      thing.name = "Name"
+      thing.save.should be_true
+      Thing.count.should == 1
+    end
+    
   end
-  it "cannot be created without a name" do
-    Thing.new.should_not be_valid
-  end
-  it "saves a thing in the database" do
-    lambda { Thing.create!({name: "thing"}) }.should_not raise_error
-    Thing.count.should == 1
-  end
+
 end

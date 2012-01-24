@@ -1,1 +1,2 @@
-RailsMVC::Application.config.secret_token = 'ed8e05f3a1223613ae8cfc58cb191aef'
+RailsMvc::Application.config.secret_token = "why did the chicken cross the road?"
+

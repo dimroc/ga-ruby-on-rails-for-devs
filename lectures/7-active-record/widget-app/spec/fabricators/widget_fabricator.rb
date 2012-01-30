@@ -1,3 +1,7 @@
 Fabricator(:widget) do
-  name { Faker::Name.name }
+  name { sequence { |i| "Widget #{i}" } }
+end
+
+Fabricator(:widget_with_gadgets, from: :widget) do
+  gadgets! { [Fabricate(:gadget_with_controls), Fabricate(:gadget_with_controls)] }
 end

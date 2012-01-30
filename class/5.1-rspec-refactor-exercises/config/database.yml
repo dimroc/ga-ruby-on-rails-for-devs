@@ -1,19 +1,19 @@
 common: &common
   adapter: postgresql
-  host: localhost
-  port: 5432
   username: rails
   password: password
+  host: localhost
+  port: 5432
 
 development:
-  database: rails_development
   <<: *common
+  database: rails_mvc_development
 
 test:
-  database: rails_test
   <<: *common
+  database: rails_mvc_test
 
 production:
-  database: rails_production
   <<: *common
+  database: rails_mvc_production
 

@@ -1,5 +1,6 @@
 Fabricator(:gadget) do
   name { sequence { |i| "Gadget #{i}"} }
+  type { %w(HeaderGadget SidebarGadget).sample }
   widget
 end
 

@@ -5,8 +5,9 @@
       %ul
         - widget.gadgets.each do |gadget|
           %li
-            = gadget.name
+            %span #{gadget.name}: #{gadget.info}
             - gadget.controls.each do |control|
               %ul
-                %li= control.name
+                %li
+                  %span #{control.name}:
 

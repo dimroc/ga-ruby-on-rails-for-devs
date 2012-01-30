@@ -11,11 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120130201514) do
+ActiveRecord::Schema.define(:version => 20120130214420) do
 
   create_table "controls", :force => true do |t|
     t.string   "name"
     t.integer  "gadget_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "desktops", :force => true do |t|
+    t.string   "os"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -28,10 +34,18 @@ ActiveRecord::Schema.define(:version => 20120130201514) do
     t.string   "type"
   end
 
-  create_table "widgets", :force => true do |t|
-    t.string   "name"
+  create_table "webpages", :force => true do |t|
+    t.string   "url"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "widgets", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.integer  "displayable_id"
+    t.string   "displayable_type"
   end
 
 end

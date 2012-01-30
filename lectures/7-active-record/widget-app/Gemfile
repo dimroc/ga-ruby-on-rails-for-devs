@@ -27,6 +27,7 @@ group :test, :development do
   gem 'capybara'
   gem 'fabrication'
   gem 'ffaker'
+  gem 'shoulda-matchers'
 
   gem 'awesome_print'
   gem 'hirb'

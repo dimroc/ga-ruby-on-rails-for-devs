@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Widget do
+  it { should belong_to(:displayable) }
+
   describe "#gadgets" do
     let(:widget) { Fabricate(:widget) }
     it "should have gadgets" do

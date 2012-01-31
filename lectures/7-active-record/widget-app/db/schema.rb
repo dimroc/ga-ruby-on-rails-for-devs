@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120130214420) do
+ActiveRecord::Schema.define(:version => 20120131054202) do
 
   create_table "controls", :force => true do |t|
     t.string   "name"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20120130214420) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "type"
+    t.integer  "dock_index"
   end
 
   create_table "webpages", :force => true do |t|

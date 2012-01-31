@@ -3,5 +3,6 @@ Fabricator(:desktop) do
 end
 
 Fabricator(:desktop_with_widgets, from: :desktop) do
-  widgets { [Fabricate(:widget), Fabricate(:widget)] }
+  # The '!' bang is needed to eagerly persist the list before assignment
+  widgets! { [Fabricate(:widget_with_gadgets), Fabricate(:widget_with_gadgets)] }
 end

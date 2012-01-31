@@ -6,4 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-10.times { Fabricate(:widget_with_gadgets) }
+# Not ideal for actual development or deployment purposes!
+# For demonstration purposes only, seed development database with fabricated data:
+
+3.times { Fabricate(:desktop_with_widgets) }
+1.times { Fabricate(:webpage_with_widgets) }

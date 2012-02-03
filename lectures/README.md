@@ -19,4 +19,5 @@ Lectures
 * [Lecture 5: RSpec](5-rspec/README.md)
 * [Lecture 6: Ruby Meta-Programming](6-ruby-meta-programming/README.md)
 * [Lecture 7: ActiveRecord](7-active-record/README.md)
+* [Lecture 8: Rendering in Rails](8-erb-haml-sass/README.md)
 

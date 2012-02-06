@@ -2,4 +2,6 @@
   = render 'shared/error_msg', model: @user
   = f.input :name
   = f.input :email
+  = f.input :password
+  = f.input :password_confirmation, :label => false
   = f.button :submit

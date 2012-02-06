@@ -16,7 +16,10 @@ feature "Users", js: true do
 
   scenario "can be created" do
     visit "/users/new"
-    fill_in "Name", with: "new user"
+    fill_in "user_name", with: "new user"
+    fill_in "user_email", with: "user@example.com"
+    fill_in "user_password", with: "password"
+    fill_in "user_password_confirmation", with: "password"
     click_button "Create User"
     User.count.should == 1
     User.last.name.should == "new user"

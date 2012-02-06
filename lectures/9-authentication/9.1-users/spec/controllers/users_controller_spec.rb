@@ -176,7 +176,7 @@ describe UsersController do
       describe "with valid params" do
 
         it "creates a new user" do
-          post :create, :user => {'name' => 'test', 'email' => 'user@example.com'}
+          post :create, :user => {'name' => 'test', 'email' => 'user@example.com', 'password' => 'password', 'password_confirmation' => 'password'}
           User.count.should == 1
           User.last.name.should == "test"
         end

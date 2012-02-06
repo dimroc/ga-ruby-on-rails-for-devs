@@ -12,7 +12,22 @@ class User < ActiveRecord::Base
   def has_password?(pwd)
     self.encrypted_password == encrypt(pwd)
   end
+
+  def self.authenticate(email, pwd)
+    user = find_by_email(email)
+    return nil  if user.nil?
+    return user if user.has_password?(pwd)
+  end
+ 
+  def self.authenticate_with_cookie(id, cookie)
+    user = find_by_id(id)
+    (user && encrypt(user.encrypted_password) == cookie) ? user : nil
+  end
   
+  def cookie
+    encrypt(encrypted_password)
+  end
+     
   private
     
     def encrypt_password

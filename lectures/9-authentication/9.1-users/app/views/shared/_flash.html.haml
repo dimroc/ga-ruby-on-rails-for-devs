@@ -1,0 +1,8 @@
+.error_explanation
+  -unless flash.blank?
+    %ul
+    -flash.each do |key, value|
+      %li 
+        =key
+        =value
+

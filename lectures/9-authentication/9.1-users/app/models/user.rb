@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   before_create :encrypt_password
 
   def has_password?(pwd)
-    self.encrypted_password == encrypt(pwd)
+    self.encrypted_password == User.encrypt(pwd)
   end
 
   def self.authenticate(email, pwd)
@@ -21,20 +21,24 @@ class User < ActiveRecord::Base
  
   def self.authenticate_with_cookie(id, cookie)
     user = find_by_id(id)
-    (user && encrypt(user.encrypted_password) == cookie) ? user : nil
+    (user && User.encrypt(user.encrypted_password) == cookie) ? user : nil
   end
   
   def cookie
-    encrypt(encrypted_password)
+    User.encrypt(encrypted_password)
+  end
+  
+  def to_s
+    "#{name} <#{email}>"
   end
      
   private
     
     def encrypt_password
-      self.encrypted_password = encrypt(self.password)
+      self.encrypted_password = User.encrypt(self.password)
     end
         
-    def encrypt(string)
+    def self.encrypt(string)
       Digest::SHA2.hexdigest(string)
     end
     

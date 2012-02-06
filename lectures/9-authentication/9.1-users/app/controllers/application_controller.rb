@@ -1,3 +1,9 @@
 class ApplicationController < ActionController::Base
-  # TODO: common controller stuff goes here
+  include SessionsHelper
+  
+  before_filter :authenticate
+
+  def authenticate
+    redirect_to :signin unless signed_in?
+  end
 end

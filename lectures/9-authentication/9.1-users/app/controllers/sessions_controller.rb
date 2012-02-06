@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  skip_filter :authenticate, only: [ :new, :create ]
 
   def new
     render 'new'
@@ -13,6 +14,11 @@ class SessionsController < ApplicationController
       sign_in user
       redirect_to user
     end
+  end
+  
+  def destroy
+    sign_out
+    redirect_to root_path
   end
 
 end

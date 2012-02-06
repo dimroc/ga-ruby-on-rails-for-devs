@@ -6,6 +6,7 @@ module SessionsHelper
   end
 
   def sign_out
+    cookies.delete :auth_token
     self.current_user = nil
   end
   
@@ -15,6 +16,10 @@ module SessionsHelper
 
   def current_user
     @current_user ||= user_from_cookie
+  end
+  
+  def current_user=(user)
+    @current_user = user
   end
 
   private

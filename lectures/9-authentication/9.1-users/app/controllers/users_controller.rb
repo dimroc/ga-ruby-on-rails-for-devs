@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_filter :get_user, :only => [ :edit, :show, :update, :destroy ]
+  skip_filter :authenticate, :only => [ :new, :create ]
   
   def get_user
     begin

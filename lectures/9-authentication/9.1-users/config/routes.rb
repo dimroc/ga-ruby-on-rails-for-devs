@@ -1,6 +1,4 @@
 RailsMvc::Application.routes.draw do
-  get "sessions/new"
-
   resources :things
   resources :users
   

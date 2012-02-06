@@ -40,7 +40,10 @@ class UsersController < ApplicationController
 
   # PUT /users/1
   def update
-    if @user.update_attributes(params[:user])
+    if @user != current_user
+      flash.now[:error] = "Cannot modify other users."
+      render action: "edit"
+    elsif @user.update_attributes(params[:user])
       redirect_to @user, notice: 'User was successfully updated.'
     else
       render action: "edit"
@@ -49,7 +52,12 @@ class UsersController < ApplicationController
 
   # DELETE /users/1
   def destroy
-    @user.destroy
+    if @user != current_user
+      flash.now[:error] = "Cannot delete other users."
+    else
+      @user.destroy
+      sign_out
+    end
     redirect_to users_url
   end
 end

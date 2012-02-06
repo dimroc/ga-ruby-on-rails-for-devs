@@ -1,11 +1,16 @@
 require 'spec_helper'
 
 describe UsersController do
-
+  
   context "with mocks" do
 
     def mock_user(stubs = {})
       @mock_user ||= mock_model(User, stubs).as_null_object
+    end
+
+    before :each do
+      controller.stub(:authenticate).and_return nil
+      controller.stub(:current_user).and_return { @mock_user }
     end
 
     describe "GET index" do
@@ -89,12 +94,6 @@ describe UsersController do
           assigns(:user).should be mock_user
         end
 
-        it "redirects to the user list" do
-          User.stub(:find).and_return mock_user({:update_attributes => true})
-          put :update, :id => "1"
-          response.should redirect_to mock_user
-        end
-
       end
 
       describe "with invalid params" do
@@ -135,11 +134,12 @@ describe UsersController do
   
   context "with fabricators" do
 
+    before :each do
+      @user = Fabricate(:user)
+      sign_in @user
+    end
+    
     describe "GET index" do
-
-      before(:each) do
-        @user = Fabricate(:user)
-      end
 
       it "assigns all users to @users" do
         get :index
@@ -177,7 +177,7 @@ describe UsersController do
 
         it "creates a new user" do
           post :create, :user => {'name' => 'test', 'email' => 'user@example.com', 'password' => 'password', 'password_confirmation' => 'password'}
-          User.count.should == 1
+          User.count.should == 2
           User.last.name.should == "test"
         end
 
@@ -186,10 +186,6 @@ describe UsersController do
     end
 
     describe "PUT update" do
-
-      before(:each) do
-        @user = Fabricate(:user)
-      end
 
       describe "with valid params" do
 
@@ -213,10 +209,6 @@ describe UsersController do
     end
 
     describe "DELETE destroy" do
-
-      before(:each) do
-        @user = Fabricate(:user)
-      end
 
       it "destroys the requested user" do
         delete :destroy, :id => @user.id.to_s

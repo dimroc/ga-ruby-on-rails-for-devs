@@ -2,6 +2,10 @@ require 'spec_helper'
 
 describe ThingsController do
 
+  before :each do
+    sign_in Fabricate :user
+  end
+  
   context "with mocks" do
 
     def mock_thing(stubs = {})

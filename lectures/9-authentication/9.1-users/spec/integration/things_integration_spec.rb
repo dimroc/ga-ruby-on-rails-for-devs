@@ -1,6 +1,14 @@
 require 'spec_helper'
 
 feature "Things", js: true do
+  
+  before :each do
+    user = Fabricate :user
+    visit signin_path
+    fill_in 'session[email]', :with => user.email
+    fill_in 'session[password]', :with => user.password
+    click_button "Sign In"
+  end
 
   scenario "are displayed in a table" do
     thing = Fabricate(:thing)

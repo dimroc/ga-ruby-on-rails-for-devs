@@ -1,0 +1,5 @@
+-unless flash.blank?
+  .alert.alert-error
+    -flash.each do |key, value|
+      =value
+

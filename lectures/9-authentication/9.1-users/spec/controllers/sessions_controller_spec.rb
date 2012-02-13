@@ -34,7 +34,7 @@ describe SessionsController do
 
       it "should sign the user in" do
         post :create, :session => { email: @user.email, password: @user.password }
-        controller.current_user.should == @user
+        controller.current_user.should eq @user
         controller.should be_signed_in
       end
 

@@ -9,5 +9,5 @@ Introduce RESTful with users and user sessions.
 Class Materials
 ---------------
 
-* [User Signup](9.1-users.md)
+* [User Authentication](9.1-users.md)
 

@@ -1,0 +1,5 @@
+= simple_form_for @thing do |f|
+  = render 'shared/error_msg', model: @thing
+  = f.input :name
+  = f.input :description
+  = f.button :submit

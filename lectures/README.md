@@ -22,4 +22,5 @@ Lectures
 * [Lecture 8: Rendering in Rails](8-erb-haml-sass/README.md)
 * [Lecture 9: Authentication](9-authentication/README.md)
 * [Lecture 10: RESTful API](10-restful-api/README.md)
+* [Lecture 11: NoSQL with MongoDB](11-nosql-with-mongodb/README.md)
 

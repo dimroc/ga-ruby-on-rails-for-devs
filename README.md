@@ -22,7 +22,9 @@ Final lectures include RESTful APIs with Rails and [Grape](https://github.com/in
 License
 -------
 
-This content is licensed under the TBD License.
+This course is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 United States License](http://creativecommons.org/licenses/by-nc-sa/3.0/us/).
+
+![Creative Commons Attribution-NonCommercial-ShareAlike 3.0 United States License](http://i.creativecommons.org/l/by-nc-sa/3.0/us/88x31.png "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 United States License")
 
 Copyright
 ---------

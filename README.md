@@ -1,7 +1,7 @@
 Ruby on Rails for Developers
 ============================
 
-![GeneralAssemb.ly](https://github.com/generalassembly/curriculum_RubyForDevs/raw/master/images/ga.png "GeneralAssemb.ly")
+![GeneralAssemb.ly](https://github.com/generalassembly/ga-ruby-for-devs/raw/master/images/ga.png "GeneralAssemb.ly")
 
 This course introduces developers to Ruby and Ruby-on-Rails. It's designed to be taught by a practicing Rubyist and a teaching assistant. Both must have expert understanding of Rack and Ruby-on-Rails. The ideal class size is 12 students, each having demonstrable prior application development experience. The lesson plan is conceived as 12 two-hour lectures with homework given after the first 6 courses. Subsequent 6 lectures alternate class material with coding. The course ends with 8 hours of building a final project for obtaining certification.
 

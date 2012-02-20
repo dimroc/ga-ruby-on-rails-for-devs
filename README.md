@@ -31,6 +31,8 @@ Sponsors
 
 This course has been produced in partnership with [Pivotal Labs](http://pivotallabs.com/) and [Engine Yard](http://www.engineyard.com/).
 
+![PivotalLabs](https://github.com/dblock/ga-ruby-for-devs/raw/opensource/images/pivotal-labs.png "PivotalLabs") ![EngineYard](https://github.com/dblock/ga-ruby-for-devs/raw/opensource/images/engine-yard.png "EngineYard")
+
 Copyright
 ---------
 

@@ -17,7 +17,7 @@ We step aside to teach Ruby meta-programming before lecturing on ActiveRecord, E
 Final lectures include RESTful APIs with Rails and [Grape](https://github.com/intridea/grape), an introduction to NoSQL databases with [MongoDB](mongodb.org). We also recommend you offer students an opportunity to revisit any topic that was insufficiently clear or lecture on a topic that they are curious about.
 
 * [Lectures](lectures/README.md)
-* [Exercises](class/README.md)
+* [Exercises](class/)
 
 License
 -------

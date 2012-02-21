@@ -31,12 +31,12 @@ Sponsors
 
 This course has been produced in partnership with [Pivotal Labs](http://pivotallabs.com/) and [Engine Yard](http://www.engineyard.com/).
 
-![PivotalLabs](https://github.com/dblock/ga-ruby-for-devs/raw/opensource/images/pivotal-labs.png "PivotalLabs")
+![PivotalLabs](https://github.com/generalassembly/ga-ruby-for-devs/raw/master/images/pivotal-labs.png "PivotalLabs")
 
-![EngineYard](https://github.com/dblock/ga-ruby-for-devs/raw/opensource/images/engine-yard.png "EngineYard")
+![EngineYard](https://github.com/generalassembly/ga-ruby-for-devs/raw/master/images/engine-yard.png "EngineYard")
 
 Copyright
 ---------
 
-(c) 2012 [GeneralAssemb.ly](https://generalassemb.ly/ruby-on-rails-for-developers), [Daniel Doubrovkine](http://github.com/dblock) and [contributors](CONTRIBUTORS.md).
+(c) 2012 [GeneralAssemb.ly](https://generalassemb.ly/ruby-on-rails-for-developers), [Daniel Doubrovkine](http://github.com/dblock) and [contributors](https://github.com/generalassembly/ga-ruby-for-devs/raw/master/CONTRIBUTORS.md).
 

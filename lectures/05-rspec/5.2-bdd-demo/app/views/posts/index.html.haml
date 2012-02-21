@@ -1,0 +1,5 @@
+%ol
+  - @posts.each do |post|
+    %li= link_to post.title, post
+
+= link_to "create post", new_post_path

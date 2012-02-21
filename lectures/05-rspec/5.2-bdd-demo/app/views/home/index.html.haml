@@ -1,0 +1,7 @@
+%p Welcome home
+
+- if current_user.blank?
+  = link_to "log in", new_user_session_path
+- else
+  %p= link_to "see posts", posts_path
+  %p= link_to "log out", destroy_user_session_path

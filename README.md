@@ -38,5 +38,5 @@ This course has been produced in partnership with [Pivotal Labs](http://pivotall
 Copyright
 ---------
 
-(c) 2012 [GeneralAssemb.ly](https://generalassemb.ly/ga-ruby-on-rails-for-devs), [Daniel Doubrovkine](http://github.com/dblock) and [contributors](https://github.com/generalassembly/ga-ruby-on-rails-for-devs/raw/master/CONTRIBUTORS.md).
+(c) 2012 [GeneralAssemb.ly](https://generalassemb.ly/ga-ruby-on-rails-for-devs), [Daniel Doubrovkine](http://github.com/dblock) and [contributors](https://github.com/generalassembly/ga-ruby-on-rails-for-devs/blob/master/CONTRIBUTORS.md).
 

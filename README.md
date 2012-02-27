@@ -28,6 +28,7 @@ Final lectures include RESTful APIs with Rails and [Grape](https://github.com/in
 * [Lecture 9: Authentication](https://github.com/generalassembly/ga-ruby-on-rails-for-devs/blob/master/lectures/09-authentication/README.md)
 * [Lecture 10: RESTful API](https://github.com/generalassembly/ga-ruby-on-rails-for-devs/blob/master/lectures/10-restful-api/README.md)
 * [Lecture 11: NoSQL with MongoDB](https://github.com/generalassembly/ga-ruby-on-rails-for-devs/blob/master/lectures/11-nosql-with-mongodb/README.md)
+* [Lecture 12: Caching](https://github.com/generalassembly/ga-ruby-on-rails-for-devs/blob/master/lectures/12-caching/README.md)
 
 Exercises
 ---------

@@ -1,0 +1,19 @@
+common: &common
+  adapter: postgresql
+  host: localhost
+  port: 5432
+  username: rails
+  password: password
+
+development:
+  <<: *common
+  database: rails_cache_development
+
+test:
+  <<: *common
+  database: rails_cache_test
+
+production:
+  <<: *common
+  database: rails_cache_production
+

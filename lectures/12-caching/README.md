@@ -1,10 +1,12 @@
 Lecture 12: Caching
 ===================
 
+*There are only two hard things in Computer Science: cache invalidation and naming things. -- Phil Karlton*
+
 Objective
 ---------
 
-Explore the basics of Caching in Rails.
+Explore caching in Rails.
 
 Class Materials
 ---------------

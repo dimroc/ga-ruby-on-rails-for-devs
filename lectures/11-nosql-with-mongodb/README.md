@@ -10,6 +10,6 @@ Class Materials
 ---------------
 
 * [MongoDB Installation QuickStart](http://www.mongodb.org/display/DOCS/Quickstart).
-* [NoSQL Basics](11.0-nosql-basics.md)
-* [Refactoring from ActiveRecord](11.1-refactor-mongodb.md)
+* [NoSQL Basics](11.1-nosql-basics.md)
+* [Refactoring from ActiveRecord](11.2-refactor-mongodb.md)
 

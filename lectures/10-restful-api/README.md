@@ -15,5 +15,4 @@ Class Materials
 ---------------
 
 * [RESTful in Rails](10.1-restful-rails.md)
-* [RESTful in RACK](10.2-restful-rack.md)
 

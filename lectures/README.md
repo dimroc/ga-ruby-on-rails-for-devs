@@ -13,4 +13,5 @@ Lectures
 * [Lecture 9: Authentication](09-authentication/README.md)
 * [Lecture 10: RESTful API](10-restful-api/README.md)
 * [Lecture 11: NoSQL with MongoDB](11-nosql-with-mongodb/README.md)
+* [Lecture 12: Caching](12-caching/README.md)
 

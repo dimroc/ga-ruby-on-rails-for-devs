@@ -11,5 +11,5 @@ Explore caching in Rails.
 Class Materials
 ---------------
 
-* [Caching with Rails](12.1-caching-with-rails.md)
+* [Caching in Rails](12.1-caching-in-rails.md)
 

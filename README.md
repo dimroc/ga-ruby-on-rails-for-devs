@@ -5,7 +5,7 @@ Ruby on Rails for Developers
 
 This course teaches experienced developers [Ruby](http://www.ruby-lang.org) and [Ruby-on-Rails](http://rubyonrails.org/). It's designed to be taught by a practicing rubyist and a teaching assistant. Both individuals must have expert understanding of Ruby, Rack and Ruby-on-Rails. The ideal class size is 12-15 students, each having prior application development track record. The lesson plan is conceived as 12 two-hour lectures with homework given after each of the first 6 courses. Assignments are tracked in [Pivotal Tracker](http://pivotaltracker.com). Subsequent 6 lectures alternate class material with coding. The course ends with 8 hours of building a final project for obtaining certification.
 
-You are free to use this material for your own non-commercial classes. Or to apply to take the next itearation of this class through GA visit: [Rails for Dev @ GA](https://generalassemb.ly/ruby-on-rails-for-devs)
+These materials were developed for General Assembly's class: Ruby on Rails for Developers. To apply to take the next itearation of this class through GA visit: [Rails for Dev @ GA](https://generalassemb.ly/ruby-on-rails-for-devs)
 
 
 Class Material

@@ -3,7 +3,10 @@ Ruby on Rails for Developers
 
 ![GeneralAssemb.ly](https://github.com/generalassembly/ga-ruby-on-rails-for-devs/raw/master/images/ga.png "GeneralAssemb.ly")
 
-This course teaches experienced developers [Ruby](http://www.ruby-lang.org) and [Ruby-on-Rails](http://rubyonrails.org/). It's designed to be taught by a practicing rubyist and a teaching assistant. Both individuals must have expert understanding of Ruby, Rack and Ruby-on-Rails. The ideal class size is 12-15 students, each having prior application development track record. The lesson plan is conceived as 12 two-hour lectures with homework given after each of the first 6 courses. Assignments are tracked in [Pivotal Tracker](pivotaltracker.com). Subsequent 6 lectures alternate class material with coding. The course ends with 8 hours of building a final project for obtaining certification.
+This course teaches experienced developers [Ruby](http://www.ruby-lang.org) and [Ruby on Rails](http://rubyonrails.org/). It's designed to be taught by a practicing rubyist and a teaching assistant. Both individuals must have expert understanding of Ruby, Rack and Ruby on Rails. The ideal class size is 12-15 students, each having prior application development track record. The lesson plan is conceived as 12 two-hour lectures with homework given after each of the first 6 courses. Assignments are tracked in [Pivotal Tracker](http://pivotaltracker.com). Subsequent 6 lectures alternate class material with coding. The course ends with 8 hours of building a final project for obtaining certification.
+
+These materials were developed for General Assembly's class: Ruby on Rails for Developers. To apply to take the next itearation of this class through GA visit: [Rails for Dev @ GA](https://generalassemb.ly/ruby-on-rails-for-devs)
+
 
 Essentials
 ----------
@@ -20,11 +23,11 @@ Class Material
 
 We start by introducing students to the Ruby development environment and show elementary Ruby code. Students also learn how to use Git and exercise the development workflow via [Github](http://github.com), including pull requests and topic branches. We dive into Ruby basics and conclude with object-oriented features, mixins and exception handling.
 
-After the class gains enough familiarity with the language features, we teach [Rack](http://rack.github.com/), an essential foundation of any solid Ruby-on-Rails knowledge. The instructor builds a basic web application that serves static files from the file system with Rack. A Rails application is then assembled from scratch without the use of Rails generators. Tests are written with the default unit test infrastructure, and once again using behavior-driven development with [RSpec](http://rspec.info/). The application is deployed on [Heroku](http://www.heroku.com/).
+After the class gains enough familiarity with the language features, we teach [Rack](http://rack.github.com/), an essential foundation of any solid Ruby on Rails knowledge. The instructor builds a basic web application that serves static files from the file system with Rack. A Rails application is then assembled from scratch without the use of Rails generators. Tests are written with the default unit test infrastructure, and once again using behavior-driven development with [RSpec](http://rspec.info/). The application is deployed on [Heroku](http://www.heroku.com/).
 
-We step aside to teach Ruby meta-programming before lecturing on ActiveRecord, ERB, HAML and SASS. The instructor then builds authentication without using an off-the-shelf library. This combination of technologies gives the students the necessary tools to build a complete project, which is typically introduced around the 6th lecture. When this material was developed we asked the students to build a Ruby-on-Rails clone of the popular [Stashboard](http://www.stashboard.org/) application.
+We step aside to teach Ruby meta-programming before lecturing on ActiveRecord, ERB, HAML and SASS. The instructor then builds authentication without using an off-the-shelf library. This combination of technologies gives the students the necessary tools to build a complete project, which is typically introduced around the 6th lecture. When this material was developed we asked the students to build a Ruby on Rails clone of the popular [Stashboard](http://www.stashboard.org/) application.
 
-Final lectures include RESTful APIs with Rails and [Grape](https://github.com/intridea/grape), an introduction to NoSQL databases with [MongoDB](mongodb.org). We also recommend you offer students an opportunity to revisit any topic that was insufficiently clear or lecture on a topic that they are curious about.
+Final lectures include RESTful APIs with Rails and [Grape](https://github.com/intridea/grape), an introduction to NoSQL databases with [MongoDB](http://mongodb.org). We also recommend you offer students an opportunity to revisit any topic that was insufficiently clear or lecture on a topic that they are curious about.
 
 * [Introduction: Getting Started](https://github.com/generalassembly/ga-ruby-on-rails-for-devs/blob/master/lectures/00-getting-started/README.md)
 * [Lecture 1: Developer Workflow](https://github.com/generalassembly/ga-ruby-on-rails-for-devs/blob/master/lectures/01-developer-workflow/README.md)
@@ -38,6 +41,7 @@ Final lectures include RESTful APIs with Rails and [Grape](https://github.com/in
 * [Lecture 9: Authentication](https://github.com/generalassembly/ga-ruby-on-rails-for-devs/blob/master/lectures/09-authentication/README.md)
 * [Lecture 10: RESTful API](https://github.com/generalassembly/ga-ruby-on-rails-for-devs/blob/master/lectures/10-restful-api/README.md)
 * [Lecture 11: NoSQL with MongoDB](https://github.com/generalassembly/ga-ruby-on-rails-for-devs/blob/master/lectures/11-nosql-with-mongodb/README.md)
+* [Lecture 12: Caching](https://github.com/generalassembly/ga-ruby-on-rails-for-devs/blob/master/lectures/12-caching/README.md)
 
 Exercises
 ---------
@@ -63,5 +67,5 @@ This course has been produced in partnership with [Pivotal Labs](http://pivotall
 Copyright
 ---------
 
-(c) 2012 [GeneralAssemb.ly](https://generalassemb.ly/ga-ruby-on-rails-for-devs), [Daniel Doubrovkine](http://github.com/dblock) and [contributors](https://github.com/generalassembly/ga-ruby-on-rails-for-devs/blob/master/CONTRIBUTORS.md).
+(c) 2012 [GeneralAssemb.ly](https://generalassemb.ly/ruby-on-rails-for-devs), [Daniel Doubrovkine](http://github.com/dblock) and [contributors](https://github.com/generalassembly/ga-ruby-on-rails-for-devs/blob/master/CONTRIBUTORS.md).
 

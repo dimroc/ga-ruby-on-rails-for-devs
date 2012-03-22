@@ -1,0 +1,14 @@
+%h1 Widgets
+%ul
+  - @widgets.each do |widget|
+    %li
+      = widget.name
+      %ul
+        - widget.gadgets.each do |gadget|
+          %li
+            %span #{gadget.name}: #{gadget.info}
+            - gadget.controls.each do |control|
+              %ul
+                %li
+                  %span #{control.name}:
+

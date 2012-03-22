@@ -47,6 +47,11 @@ Exercises
 
 * [Exercises](https://github.com/generalassembly/ga-ruby-on-rails-for-devs/tree/master/class)
 
+Contributing
+------------
+
+Fork the project. Make your addition or correction. Send a pull request. Bonus points for topic branches. Make language-specific pull requests into existing language branches. If you're translating into a new language, e-mail the [Google group](http://groups.google.com/group/ga-ruby-on-rails-for-devs) and we'll create a new one.
+
 License
 -------
 

@@ -2,14 +2,17 @@ require 'spec_helper'
 
 describe Role do
   context "validations" do
-    #TODO: Add validations ensuring presence of all fields
+    it { should validate_presence_of :name }
+    it { should validate_presence_of :department }
   end
 
   context "associations" do
-    #TODO: Add specs to check for associations
+    it { should have_many :employees }
   end
 
   context "fabricators" do
-    #TODO: Add specs to ensure that fabricators create valid objects
+    it "should fabricate a valid role" do
+      Fabricate.build(:role).should be_valid
+    end
   end
 end

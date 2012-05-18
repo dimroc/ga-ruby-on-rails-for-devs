@@ -1,4 +1,5 @@
 Fabricator(:employee) do
   name { Faker::Name.name }
-  # TODO: populate other values
+  address { Faker::Address.street_address }
+  start_date { Date.today }
 end

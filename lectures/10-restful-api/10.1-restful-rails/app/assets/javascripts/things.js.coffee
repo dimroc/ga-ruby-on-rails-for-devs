@@ -1,5 +1,5 @@
 $(document).ready ->
-  $('input#thing_name')
+  $('input#thing_term')
     .autocomplete({
       source: '/things.json',
       select: ( event, ui ) ->
@@ -7,9 +7,9 @@ $(document).ready ->
         row.addClass("selected")
         false
     })
-    .data("autocomplete")._renderItem = (ul, item) ->
-			  $("<li></li>")
-				  .data("item.autocomplete", item)
-				  .append("<a>#{item.thing.name}</a>")
-				  .appendTo(ul);
+      .data("autocomplete")._renderItem = (ul, item) ->
+        $("<li></li>")
+          .data("item.autocomplete", item)
+          .append("<a>#{item.thing.name}</a>")
+          .appendTo(ul);
 

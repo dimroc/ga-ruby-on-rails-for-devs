@@ -1,5 +1,5 @@
 class ThingsController < ApplicationController
-  before_filter :get_thing, :only => [ :show, :edit, :create, :update, :destroy ]
+  before_filter :get_thing, :only => [ :show, :edit, :update, :destroy ]
 
   def index
     if params[:term]
@@ -10,9 +10,10 @@ class ThingsController < ApplicationController
     respond_to do |format|
       format.html
       format.json { render :json => @things }
+      format.text { render :text => @things }
     end
   end
-  
+
   def show
     respond_to do |format|
       format.html
@@ -22,13 +23,12 @@ class ThingsController < ApplicationController
   end
 
   def edit
-    @thing = Thing.find(params[:id])
   end
-        
+
   def new
     @thing = Thing.new
   end
-  
+
   def create
     @thing = Thing.new(params[:thing])
     if @thing.save
@@ -43,9 +43,8 @@ class ThingsController < ApplicationController
       end
     end
   end
-  
+
   def update
-    @thing = Thing.find(params[:id])
     if @thing.update_attributes(params[:thing])
       respond_to do |format|
         format.html { redirect_to @thing, notice: "Thing was successfully updated." }
@@ -58,9 +57,8 @@ class ThingsController < ApplicationController
       end
     end
   end
-  
+
   def destroy
-    @thing = Thing.find(params[:id])
     @thing.destroy
     respond_to do |format|
       format.html { redirect_to things_url }
@@ -69,7 +67,7 @@ class ThingsController < ApplicationController
   end
 
   private
-    
+
     def get_thing
       @thing = Thing.find(params[:id])
     end

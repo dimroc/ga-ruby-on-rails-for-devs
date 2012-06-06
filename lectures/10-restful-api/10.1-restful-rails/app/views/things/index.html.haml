@@ -2,20 +2,20 @@
 
 = javascript_include_tag 'things'
 
-=form_for :thing do |f|
-  =f.text_field :name, :class => 'select'
+=form_for :thing, method: :get do |f|
+  =f.text_field :term, :class => 'select', name: :term
 
 %table
   %tr
     %th= "Name"
     %th
     %th
-  
+
   - @things.each do |thing|
     %tr{id: thing.id}
-      %td= thing.name
+      %td= link_to thing.name, thing_path(thing)
       %td= link_to "Edit", edit_thing_path(thing)
       %td= link_to "Destroy", thing, :confirm => "Are you sure?", :method => :delete
-      
+
 =link_to "New Thing", new_thing_path
 

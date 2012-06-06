@@ -13,3 +13,6 @@ $(document).ready ->
           .append("<a>#{item.thing.name}</a>")
           .appendTo(ul);
 
+window.createThing = (name, description) ->
+  $.post('/things.json', thing: { name: name, description: description})
+    .success (data) -> console.log "Created #{data.thing.name} with id #{data.thing.id}"
